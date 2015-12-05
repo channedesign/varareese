@@ -1,0 +1,16 @@
+<div id="contact">
+	<div class="transition"></div>
+	<div class="container center marginTop">
+		<div class="row">
+			<div class="col-md-6 col-md-offset-3">
+				<%= simple_form_for @contact_form do |f| %>
+				<%= f.input :name, required: true, label: "Your Name" %>
+				<%= f.input :email  %>
+				<%= f.input :message, required: true, as: :text %>
+				<%= f.button :submit, "Send" %>
+				<% end %>
+			</div>
+		</div>
+	</div>
+	<div class="marginTopMin"></div>
+</div>

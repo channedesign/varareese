@@ -1,0 +1,10 @@
+<%= simple_form_for @video do |f| %>
+<%= f.input :name %>
+<%= f.input :category %>
+<%= f.input :link, as: :text, error: "A link is required" %>
+<%= f.button :submit, (@video.new_record? ? "Add Video" : "Edit Video") %>
+<% end %>
+
+
+
+

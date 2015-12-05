@@ -1,0 +1,291 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
+@import "font-awesome";
+
+/*-----------------    General    ------------------*/
+
+body{
+	background-color: #212121;
+	color: #f5f5f5;
+}
+
+form {
+	color: #505050;
+}
+
+a {
+	color: #f5f5f5;
+}
+
+a:hover {
+	text-decoration: none;
+	color: #505050;
+}
+
+.marginTop200 {
+ margin-top: 200px;
+}
+
+.marginTop {
+	margin-top: 100px;
+}
+
+.marginTopMin {
+	margin-top: 50px;
+}
+
+.center {
+	text-align: center;
+}
+
+.fifty {
+	width: 50%;
+	float: left;
+}
+
+.flash {
+	width: 40%;
+	position: absolute;
+	top: 10px;
+	left: 5px;
+}
+
+.btn-default {
+	background-color: #212121;
+	color: #f5f5f5;
+}
+
+.btn-default:hover {
+	background-color: #f5f5f5;
+	color: #212121;
+}
+
+/*-----------------    Nav    ------------------*/
+
+#nav {
+	display: none;
+	z-index: 3;
+}
+
+.navbar {
+	background-color: rgba(250,250,250,1);
+}
+
+/*-----------------    Admin    ------------------*/
+
+.centered-pills { text-align:center; }
+.centered-pills ul.nav-pills { display:inline-block; }
+.centered-pills li { display:inline; }
+.centered-pills a { float:left; }
+* html .centered-pills ul.nav-pills { display:inline; } /* IE6 */
+*+html .centered-pills ul.nav-pills { display:inline; } /* IE7 */
+
+.manage_icon {
+	font-size: 10em;
+}
+
+.admin_header {
+	position: fixed;
+	width: 100%;
+	height: 70px;
+}
+
+.admin_header_button {
+	float: left;
+}
+
+/*-----------------    Admin/Video    ------------------*/
+
+.mini_thumb_div iframe {
+	width: 100px;
+	height: 70px;
+}
+
+/*-----------------    Admin/Photo    ------------------*/
+
+.mini_thumb_div {
+	margin-top: 30px;
+}
+
+.mini_thumb {
+	width: 100px;
+	height: 70px;
+}
+
+.dropzone {
+	margin-top: 50px;
+	height: 300px;
+	border-radius: 10px;
+}
+
+/*-----------------    Home    ------------------*/
+
+.video_background {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: -2;
+	overflow: hidden;
+}
+
+.video_background iframe {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	z-index: -1;
+}
+
+@media (min-aspect-ratio: 16/9) {
+  .video_background iframe {
+    height: 200%; top: -50%;
+    /* or height: 200%; top: -50%;
+       or height: 400%; top: -150%; */
+  }
+}
+@media (max-aspect-ratio: 16/9) {
+  .video_background iframe  {
+    width: 200%; left: -50%;
+    /* or width: 200%; left: -50%;
+       or width: 400%; left: -150%; */
+  }
+}
+
+.video_background .overlay {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	
+}
+
+.video_background ul {
+	position: absolute;
+	top: 20px;
+	right: 40%;
+}
+
+.video_background li {
+	list-style-type: none;
+	color: #f5f5f5;
+	float: left;
+	margin: 20px;
+}
+
+.vara_logo_home {
+	width: 100%;
+	height: 300px;
+	position: absolute;
+	top: 33%;
+	
+	background-color: rgba(200,200,200,0.5);
+	
+	color: black;
+}
+
+.vara_logo_title {
+	position: relative;
+	top: 30px;
+} 
+
+.vara_logo_title h1 {
+	font-size: 8em;
+} 
+
+/*-----------------    Video    ------------------*/
+
+#video {
+	margin-top: 100vh;
+}
+
+.big_video {
+	height: 410px;
+}
+
+.anchor_video {
+	position: relative;
+	top: 50px;
+	clear: both;
+}
+
+.video_carousel iframe {
+	width: 330px;
+	height: 210px;
+}
+
+.left_arrow_pic_div, .right_arrow_pic_div {
+	position: absolute;
+	width: 50px;
+	height: 100px;
+}
+
+.arrow_pic_div {
+	display: none;
+}
+
+.arrow_pic_div:hover {
+	background-color: rgba(250,250,250,0.5);
+}
+
+.left_arrow_pic_div {
+	top: 50px;
+	left: 0;
+}
+
+.right_arrow_pic_div {
+	top: 50px;
+	right: 0;
+}
+
+.arrow_pic {
+	height: 100%;
+}
+
+/*-----------------    Photo    ------------------*/
+
+.vara_big_pic {
+	margin-top: 100px;
+	width: 100%;
+}
+
+.vara_small_pic {
+	width: 90%;
+}
+
+.photo_carousel {
+	margin: 0 0 100px 0;
+	clear: both;
+	position: relative;
+	top: 50px;
+
+}
+
+
+
+
+
+/*-----------------    Contact    ------------------*/
+
+.transition {
+	width: 100%;
+	height: 300px;
+	background-image: image-url("testback.png");
+	background-size: cover;
+	background-attachment: fixed;
+	background-position: center;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+

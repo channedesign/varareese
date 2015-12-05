@@ -1,0 +1,15 @@
+<div id="photo">
+	<div class="fifty center marginTop200">
+		<h1>Photo</h1>
+		<p class="lead">Feel free to have a look at my work</p>
+	</div>
+	<div class="fifty">
+		<%= image_tag("test.png", class:"vara_big_pic") %>
+	</div>
+	<div class="photo_carousel">
+		<% @photos.each do |photo| %>
+			<div><%= image_tag(photo.photo.url(:thumb), class:"vara_small_pic") %></div>
+		<% end %>
+	</div>
+	<div class="marginTopMin"></div>
+</div>
