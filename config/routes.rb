@@ -2,7 +2,7 @@ Rails.application.routes.draw do
 
 
   get "admins", to: "admins#index"
-  get "admins/sign_up", to: "admins#index"
+  #get "admins/sign_up", to: "admins#index"
   get "admins/photo"
   get "admins/video"
 
