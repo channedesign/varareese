@@ -3,14 +3,11 @@
 
 <div class="photo">
     <div><%= f.label :photo %></div>
-    <% if @photo.photo.present? %>
-        <%= image_tag(@photo.photo.url(:thumb), class: "form_photo") %>
-    <% end %>
     <div><%= f.file_field :photo, accept: "image/jpeg, image/gif, image/png", class: "custom-file-input" %></div>
 </div>
 
 
-<%= f.submit(@photo.new_record? ? "Add Photo" : "Edit Photo", class: "btn btn-success") %>
+
 </div>
 <% end %>
        
