@@ -1,9 +1,13 @@
 class ContactFormsController < ApplicationController
+  layout "application"
+
   def new
   	@contact_form = ContactForm.new
   end
 
   def create
+    @videos = Video.all
+    @photos = Photo.all
   	begin
   	@contact_form = ContactForm.new(params[:contact_form])
     @contact_form.request = request
@@ -12,7 +16,7 @@ class ContactFormsController < ApplicationController
       redirect_to :root
     else
       flash.now[:danger] = 'Cannot send message.'
-      render :new
+      render "home/index"
     end
     rescue ScriptError
         flash[:error] = 'Sorry, this message appears to be spam and was not delivered.'

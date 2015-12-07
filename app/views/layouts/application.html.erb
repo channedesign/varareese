@@ -8,7 +8,7 @@
   <link href='http://fonts.googleapis.com/css?family=Josefin+Sans&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
 </head>
 <body>
-	<% if current_page?(root_path) %>
+	<% if current_page?(root_path) || current_location?(controller: "contact_forms", action: "create") %>
 		<%= render("layouts/navigation") %>
 	<% end %>
 

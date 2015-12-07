@@ -9,8 +9,8 @@ Rails.application.routes.draw do
   resources :photos
   resources :videos
   devise_for :admins
-  resources :contact_forms
-
+  resources :contact_forms, only: [:new, :create]
+  
 
 
   root 'home#index'

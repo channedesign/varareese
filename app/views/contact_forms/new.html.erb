@@ -3,10 +3,10 @@
 	<div class="container center marginTop">
 		<div class="row">
 			<div class="col-md-6">
-				<%= simple_form_for @contact_form do |f| %>
-				<%= f.input :name, required: true, label: "Your Name" %>
-				<%= f.input :email  %>
-				<%= f.input :message, required: true, as: :text %>
+				<%= simple_form_for @contact_form, :url => contact_forms_path(@contact_form, :anchor => "contact") do |f| %>
+				<%= f.input :name, placeholder: "Your Name Here", error: "Your name is required." %>
+				<%= f.input :email, placeholder: "Your Email Here", error: "Your email is required."  %>
+				<%= f.input :message, as: :text, required: true, error: "A short message is required too!" %>
 				<%= f.button :submit, "Send" %>
 				<% end %>
 			</div>
