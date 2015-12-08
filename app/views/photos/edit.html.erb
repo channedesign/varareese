@@ -3,13 +3,10 @@
     <%= link_to("Back To Manage Photo", admins_photo_path, class: "btn btn-default") %>
     <div class="row">
         <div class="well col-md-8 col-md-offset-2 marginTopMin">
-            <%= form_for(@photo, html: {multipart: true}) do |f| %>
-            <div class="fallback">
-            <%= f.label :name %>
-            <%= f.text_field :name %>
+            <%= simple_form_for(@photo, html: {multipart: true}) do |f| %>
+            <%= f.input :name %>
             
-            <%= f.label :category %>
-            <%= f.text_field :category %>
+            <%= f.input :category %>
             
             <div class="photo">
                 <div><%= f.label :photo %></div>
@@ -21,14 +18,13 @@
 
             
             <%= f.submit(@photo.new_record? ? "Add Photo" : "Edit Photo", class: "btn btn-success") %>
-            </div>
             <% end %>
         </div>
     </div>
 
     <div class="row">
         <div class="well col-md-8 col-md-offset-2">
-            <%= form_for(@photo, :url => {:controller => "photos", :action => 'destroy', :id => @photo.id}, method: "delete") do |f| %>
+            <%= simple_form_for(@photo, :url => {:controller => "photos", :action => 'destroy', :id => @photo.id}, method: "delete") do |f| %>
             
             <%= submit_tag("Delete", class: "btn btn-danger") %>
             <% end %>

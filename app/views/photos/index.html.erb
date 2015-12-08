@@ -6,10 +6,14 @@
 	<div class="fifty">
 		<%= image_tag("test.png", class:"vara_big_pic") %>
 	</div>
-	<div class="photo_carousel">
-		<% @photos.each do |photo| %>
-			<div><%= image_tag(photo.photo.url(:thumb), class:"vara_small_pic") %></div>
-		<% end %>
+	<div class="anchor_photo">
+		<%= render_gallery_for @photos  %>
+		<div class="left_arrow_pic_div_photo arrow_pic_div">
+			<%= image_tag("left_arrow.png", class: "arrow_pic", id: "left_arrow_pic") %>
+		</div>
+		<div class="right_arrow_pic_div_photo arrow_pic_div">
+			<%= image_tag("right_arrow.png", class: "arrow_pic", id: "right_arrow_pic") %>
+		</div>
 	</div>
 	<div class="marginTopMin"></div>
 </div>

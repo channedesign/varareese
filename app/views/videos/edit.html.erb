@@ -1,2 +1,17 @@
-<h1>Videos#edit</h1>
-<p>Find me in app/views/videos/edit.html.erb</p>
+<%= render template: "shared/admins_header" %>
+<div class="container center">
+	<%= link_to("Back To Manage Video", admins_video_path, class: "btn btn-default") %>
+	<div class="row">
+		<div class="well col-md-8 col-md-offset-2 marginTopMin">
+			<%= render("videos/form") %>
+		</div>
+	</div>
+	<div class="row">
+        <div class="well col-md-8 col-md-offset-2">
+            <%= simple_form_for(@video, :url => {:controller => "videos", :action => 'destroy', :id => @video.id}, method: "delete") do |f| %>
+            
+            <%= submit_tag("Delete", class: "btn btn-danger") %>
+            <% end %>
+        </div>
+    </div>
+</div>

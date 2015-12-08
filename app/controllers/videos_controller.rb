@@ -27,12 +27,25 @@ class VideosController < ApplicationController
   end
 
   def edit
+    @video = Video.find(params[:id])
   end
 
   def update
+    @video = Video.find(params[:id])
+
+    if @video.update_attributes(video_params)
+      flash[:notice] = "Video edited successfully"
+      redirect_to admins_video_path
+    else
+      flash[:alert] = "Video NOT edited"
+      render "edit"
+    end
   end
 
   def destroy
+    @video = Video.find(params[:id]).destroy
+    flash[:notice] = "Video deleted successfully"
+    redirect_to admins_video_path
   end
 
   private

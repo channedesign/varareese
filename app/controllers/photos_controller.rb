@@ -16,11 +16,9 @@ class PhotosController < ApplicationController
     @photo = Photo.new(photo_params)
 
     if @photo.save
-      flash[:notice] = "Photo uploaded successfully"
-      redirect_to admins_photo_path
+      render json: { message: "success", fileID: @photo.id }, :status => 200
     else
-      flash[:alert] = "Photo NOT uploaded"
-      render "new"
+      render json: { error: @photo.errors.full_messages.join(',')}, :status => 400
     end
   end
 

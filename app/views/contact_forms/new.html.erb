@@ -3,10 +3,12 @@
 	<div class="container center marginTop">
 		<div class="row">
 			<div class="col-md-6">
+				<p class="success flash"><%= notice %></p>
+    			<p class="alert flash"><%= alert %></p>
 				<%= simple_form_for @contact_form, :url => contact_forms_path(@contact_form, :anchor => "contact") do |f| %>
 				<%= f.input :name, placeholder: "Your Name Here", error: "Your name is required." %>
 				<%= f.input :email, placeholder: "Your Email Here", error: "Your email is required."  %>
-				<%= f.input :message, as: :text, required: true, error: "A short message is required too!" %>
+				<%= f.input :message, as: :text, input_html: { rows: 8 }, required: true, error: "A short message is required too!" %>
 				<%= f.button :submit, "Send" %>
 				<% end %>
 			</div>

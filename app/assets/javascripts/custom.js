@@ -8,7 +8,8 @@ $(document).ready(function() {
 	owl.owlCarousel({
 		autoPlay: 5000,
 		items: 4,
-		pagination: false
+		pagination: false,
+		stopOnHover: true
 	});
 	//Video carousel triggers
 	$(".left_arrow_pic_div").click(function(){
@@ -21,10 +22,16 @@ $(document).ready(function() {
 		autoPlay: 3000,
 		items: 5,
 		pagination: false, 
-		autoHeight: true
+		stopOnHover: true
 	});
+	$(".left_arrow_pic_div_photo").click(function(){
+    	owl2.trigger('owl.prev');
+  	})
+  	$(".right_arrow_pic_div_photo").click(function(){
+    	owl2.trigger('owl.next');
+  	})
 
-  	$(".anchor_video").hover(function() {
+  	$(".anchor_video, .anchor_photo").hover(function() {
   		$(".arrow_pic_div").fadeIn("slow");
   	}, function() {
   		$(".arrow_pic_div").fadeOut("slow");

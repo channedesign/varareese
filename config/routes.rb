@@ -6,8 +6,8 @@ Rails.application.routes.draw do
   get "admins/photo"
   get "admins/video"
 
-  resources :photos
-  resources :videos
+  resources :photos, except: [:show]
+  resources :videos, except: [:show]
   devise_for :admins
   resources :contact_forms, only: [:new, :create]
   
