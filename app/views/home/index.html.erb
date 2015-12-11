@@ -6,6 +6,9 @@
 			<li><%= link_to("Video", "#video") %></li>
 			<li><%= link_to("Photo", "#photo") %></li>
 			<li><%= link_to("Contact", "#contact") %></li>
+			<% if admin_signed_in? %>
+				<li><%= link_to("ADMIN", admins_path) %></li>
+			<% end %>
 		</ul>
 		<div class="vara_logo_home">
 			<div class="vara_logo_title center">

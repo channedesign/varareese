@@ -1,6 +1,6 @@
 <%= render template: "shared/admins_header" %>
 <div class="container center">
-	<%= link_to("Back To Manage Video", admins_video_path, class: "btn btn-default") %>
+	<%= link_to("Back To Manage Video", :back , class: "btn btn-default") %>
 	<div class="row">
 		<div class="well col-md-8 col-md-offset-2 marginTopMin">
 			<%= render("videos/form") %>

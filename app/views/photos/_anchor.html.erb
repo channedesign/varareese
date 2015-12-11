@@ -1,0 +1,12 @@
+<div class="anchor_photo_<%= title %> center anchor_photo">
+	<h2><%= big_title %></h2>
+	
+		<%= render_gallery_for var, list_class: "photo_carousel_"+title  %>
+	
+	<div class="left_arrow_pic_div_photo arrow_pic_div left_arrow_<%= title %>">
+		<%= image_tag("left_arrow.png", class: "arrow_pic", id: "left_arrow_pic") %>
+	</div>
+	<div class="right_arrow_pic_div_photo arrow_pic_div right_arrow_<%= title %>">
+		<%= image_tag("right_arrow.png", class: "arrow_pic", id: "right_arrow_pic") %>
+	</div>
+</div>

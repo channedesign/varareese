@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   get "admins/sign_up", to: "admins#index"
   get "admins/photo"
   get "admins/video"
+  get "admins/profile"
 
   resources :photos, except: [:show]
   resources :videos, except: [:show]

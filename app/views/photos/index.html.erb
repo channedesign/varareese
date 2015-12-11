@@ -6,14 +6,9 @@
 	<div class="fifty">
 		<%= image_tag("test.png", class:"vara_big_pic") %>
 	</div>
-	<div class="anchor_photo">
-		<%= render_gallery_for @photos  %>
-		<div class="left_arrow_pic_div_photo arrow_pic_div">
-			<%= image_tag("left_arrow.png", class: "arrow_pic", id: "left_arrow_pic") %>
-		</div>
-		<div class="right_arrow_pic_div_photo arrow_pic_div">
-			<%= image_tag("right_arrow.png", class: "arrow_pic", id: "right_arrow_pic") %>
-		</div>
-	</div>
+	<%= render "photos/anchor", title: "head", var: @photos_head , big_title: "Headshots"  %>
+	<%= render "photos/anchor", title: "event", var: @photos_event , big_title: "Events"  %>
+	<%= render "photos/anchor", title: "recreation", var: @photos_recreation , big_title: "Recreation" %>
 	<div class="marginTopMin"></div>
 </div>
+	

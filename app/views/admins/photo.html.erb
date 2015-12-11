@@ -7,11 +7,26 @@
 		</div>
 		<div class="col-md-6">
 			<h3>Edit Your Photo</h3>
-			<% @photos.each do |photo| %>
-				<div class="col-sm-3 mini_thumb_div">
-					<%= link_to(image_tag(photo.photo.url(:thumb), class: "mini_thumb"), edit_photo_path(photo)) %>
+			<ul class="nav nav-tabs">
+				<li class="active"><a data-toggle="tab" data-target="#all_photos">All Photos</a></li>
+				<li><a data-toggle="tab" data-target="#head_photos">Headshots</a></li>
+				<li><a data-toggle="tab" data-target="#event_photos">Events</a></li>
+				<li><a data-toggle="tab" data-target="#recreation_photos">Recreation</a></li>
+			</ul>
+			<div class="tab-content" id="photo_tab">
+				<div id="all_photos" class="tab-pane fade in active">
+					<%= render("admins/tab_photo", var: @photos) %>
 				</div>
-			<% end %>
+				<div id="head_photos" class="tab-pane fade">
+					<%= render("admins/tab_photo", var: @photos_head) %>
+				</div>
+				<div id="event_photos" class="tab-pane fade">
+					<%= render("admins/tab_photo", var: @photos_event) %>
+				</div>
+				<div id="recreation_photos" class="tab-pane fade">
+					<%= render("admins/tab_photo", var: @photos_recreation) %>
+				</div>
+			</div>
 		</div>
 	</div>
 </div>

@@ -3,10 +3,9 @@ class VideosController < ApplicationController
 
   def index
     @videos = Video.all
-  end
-
-  def show
-
+    @videos_fashion = Video.where("category like ?", "%fashion%")
+    @videos_editorial = Video.where("category like ?", "%editorial%")
+    @videos_behind = Video.where("category like ?", "%behind%")
   end
 
   def new
@@ -17,6 +16,8 @@ class VideosController < ApplicationController
     @video = Video.new(video_params)
     @videos = Video.all
 
+    
+    
     if @video.save
       flash[:notice] = "Video uploaded successfully"
       redirect_to admins_video_path

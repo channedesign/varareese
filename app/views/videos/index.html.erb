@@ -6,17 +6,10 @@
 		<h1>Video</h1>
 		<p class="lead">Feel free to have a look at my work</p>
 	</div>
-	<div class="anchor_video">
-		<div class="video_carousel">
-			<% @videos.each do |video| %>
-				<div><%= video.link.html_safe %></div>
-			<% end %>
-		</div>
-		<div class="left_arrow_pic_div arrow_pic_div">
-			<%= image_tag("left_arrow.png", class: "arrow_pic", id: "left_arrow_pic") %>
-		</div>
-		<div class="right_arrow_pic_div arrow_pic_div">
-			<%= image_tag("right_arrow.png", class: "arrow_pic", id: "right_arrow_pic") %>
-		</div>
-	</div>
+	<%= render "videos/anchor", title: "fashion", var: @videos_fashion , big_title: "Fashion"  %>
+	<%= render "videos/anchor", title: "editorial", var: @videos_editorial , big_title: "Editorial"  %>
+	<%= render "videos/anchor", title: "behind", var: @videos_behind , big_title: "Behind The Scenes" %>
+	<%= render "videos/anchor", title: "week", var: @videos_week , big_title: "Fashion Week" %>
+	<%= render "videos/anchor", title: "short", var: @videos_short , big_title: "Short Films" %>
 </div>
+

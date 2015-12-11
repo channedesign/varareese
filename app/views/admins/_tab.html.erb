@@ -1,0 +1,6 @@
+<% var.each do |video| %>
+	<div class="col-md-3 mini_thumb_div">
+		<<%= video.link.html_safe %>>
+		<p><%= link_to("Edit", edit_video_path(video)) %></p>
+	</div>
+<% end %>

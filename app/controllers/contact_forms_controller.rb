@@ -1,5 +1,5 @@
 class ContactFormsController < ApplicationController
-  layout "application"
+  
 
   def new
   	@contact_form = ContactForm.new

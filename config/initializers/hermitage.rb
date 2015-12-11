@@ -29,7 +29,7 @@
  Hermitage.configure :photos do
  	list_tag :div
  	item_tag :div
- 	list_class "photo_carousel"
+ 	list_class ""
  	item_class ""
  	link_class ""
  	image_class "vara_small_pic"
