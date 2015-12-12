@@ -1,7 +1,7 @@
 <%= simple_form_for @video do |f| %>
 <%= f.input :name %>
 <%= f.input :category %>
-<%= f.input :link, as: :text, error: "A link is required" %>
+<%= f.input :link, as: :text %>
 <% if @video.link.present? %>
 	<<%= @video.link.html_safe %>>
 	<br />

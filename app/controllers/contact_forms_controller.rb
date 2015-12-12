@@ -6,8 +6,14 @@ class ContactFormsController < ApplicationController
   end
 
   def create
-    @videos = Video.all
-    @photos = Photo.all
+    @videos_fashion = Video.where("category like ?", "%fashion%")
+    @videos_editorial = Video.where("category like ?", "%editorial%")
+    @videos_behind = Video.where("category like ?", "%behind%")
+    @videos_week = Video.where("category like ?", "%week%") 
+    @videos_short = Video.where("category like ?", "%short%") 
+    @photos_head = Photo.where("category like ?", "%head%")
+    @photos_event = Photo.where("category like ?", "%event%")
+    @photos_recreation = Photo.where("category like ?", "%recreation%")
   	begin
   	@contact_form = ContactForm.new(params[:contact_form])
     @contact_form.request = request

@@ -6,6 +6,8 @@ class VideosController < ApplicationController
     @videos_fashion = Video.where("category like ?", "%fashion%")
     @videos_editorial = Video.where("category like ?", "%editorial%")
     @videos_behind = Video.where("category like ?", "%behind%")
+    @videos_week = Video.where("category like ?", "%week%")  
+    @videos_short = Video.where("category like ?", "%short%") 
   end
 
   def new
@@ -15,15 +17,17 @@ class VideosController < ApplicationController
   def create
     @video = Video.new(video_params)
     @videos = Video.all
-
+    @videos_fashion = Video.where("category like ?", "%fashion%")
+    @videos_editorial = Video.where("category like ?", "%editorial%")
+    @videos_behind = Video.where("category like ?", "%behind%")
+    @videos_week = Video.where("category like ?", "%week%")  
+    @videos_short = Video.where("category like ?", "%short%") 
     
     
     if @video.save
-      flash[:notice] = "Video uploaded successfully"
-      redirect_to admins_video_path
+      redirect_to admins_video_path, notice: "Video uploaded successfully"
     else
-      flash[:alert] = "Video NOT uploaded"
-      render template: "admins/video"
+      render template: "admins/video", alert: "Video NOT uploaded"
     end
   end
 
@@ -35,18 +39,15 @@ class VideosController < ApplicationController
     @video = Video.find(params[:id])
 
     if @video.update_attributes(video_params)
-      flash[:notice] = "Video edited successfully"
-      redirect_to admins_video_path
+      redirect_to admins_video_path, notice: "Video edited successfully"
     else
-      flash[:alert] = "Video NOT edited"
-      render "edit"
+      render "edit", alert: "Video NOT edited"
     end
   end
 
   def destroy
     @video = Video.find(params[:id]).destroy
-    flash[:notice] = "Video deleted successfully"
-    redirect_to admins_video_path
+    redirect_to admins_video_path, notice: "Video deleted successfully"
   end
 
   private
