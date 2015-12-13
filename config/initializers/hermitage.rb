@@ -30,7 +30,7 @@
  	list_tag :div
  	item_tag :div
  	list_class ""
- 	item_class ""
+ 	item_class "vara_small_photo_div"
  	link_class ""
  	image_class "vara_small_pic"
  end
