@@ -3,7 +3,7 @@ $(document).ready(function() {
 
 	$(".fullHeight").css("max-height", $(window).height());
 
-	//Video carousel
+	//Carousel
 	function owl(x) {
 		x.owlCarousel({
 			items: 4,
@@ -40,7 +40,7 @@ $(document).ready(function() {
   	owl2(owlRecreation);
 	
 
-	//Video carousel triggers
+	//Carousel triggers
 	function arrow(x,y,z) {
 		$(x).click(function() {
 			y.trigger('prev.owl.carousel');
@@ -61,11 +61,35 @@ $(document).ready(function() {
 	arrow(".left_arrow_recreation", owlRecreation, ".right_arrow_recreation");
 
 
-  	$(".anchor_video, .anchor_photo").hover(function() {
-  		$(".arrow_pic_div").fadeIn("slow");
-  	}, function() {
-  		$(".arrow_pic_div").fadeOut("slow");
-  	});
+  	
+
+  	function arrowHover(x, y) {
+  		$(x).hover(function() {
+	  		$(".left_arrow_" + y).fadeIn("slow");
+	  		$(".right_arrow_" + y).fadeIn("slow");
+	  	}, function() {
+	  		$(".left_arrow_" + y).fadeOut("slow");
+	  		$(".right_arrow_" + y).fadeOut("slow");
+	  	});
+  	}
+
+  	var anchorFashion = $(".anchor_video_fashion");
+  	var anchorEditorial = $(".anchor_video_editorial");
+  	var anchorBehind = $(".anchor_video_behind");
+  	var anchorWeek = $(".anchor_video_week");
+  	var anchorShort = $(".anchor_video_short");
+  	var anchorHead = $(".anchor_photo_head");
+  	var anchorEvent = $(".anchor_photo_event");
+  	var anchorRecreation = $(".anchor_photo_recreation");
+
+  	arrowHover(anchorFashion, "fashion");
+  	arrowHover(anchorEditorial, "editorial");
+  	arrowHover(anchorBehind, "behind");
+  	arrowHover(anchorWeek, "week");
+  	arrowHover(anchorShort, "short");
+  	arrowHover(anchorHead, "head");
+  	arrowHover(anchorEvent, "event");
+  	arrowHover(anchorRecreation, "recreation");
 
 	//nav
 	$(window).scroll(function() {
