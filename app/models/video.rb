@@ -1,8 +1,9 @@
 class Video < ActiveRecord::Base
-	before_save :add_lazy_load, :downcase
-	before_create :slice_first_and_last
+	
+	has_and_belongs_to_many :video_categories
 
-	validates :link, presence: { message: "A link is required" }, uniqueness: { message: "Video has already been uploaded" }
+
+	validates :link, presence: { message: "A link is required!" }, uniqueness: { message: "Video has already been uploaded!" }
 	
 	
 	private 

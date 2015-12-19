@@ -1,6 +1,6 @@
 <% var.each do |video| %>
 	<div class="col-md-3 mini_thumb_div">
-		<<%= video.link.html_safe %>>
+		<iframe class="lazyload" data-src="https://player.vimeo.com/video/<%= video.link %>" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
 		<p><%= link_to("Edit", edit_video_path(video)) %></p>
 	</div>
 <% end %>

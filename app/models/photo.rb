@@ -1,8 +1,7 @@
 class Photo < ActiveRecord::Base
-	before_update :downcase
-	#validates :name, uniqueness: true, presence: true
-	#validates :category, presence: true
+	has_and_belongs_to_many :photo_categories
 	
+	validates :name, uniqueness: true
 	has_attached_file :photo, styles: { thumb: "400x300#" }
 	validates_attachment_content_type :photo, :content_type => /\Aimage\/.*\Z/
 	

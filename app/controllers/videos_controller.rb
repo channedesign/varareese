@@ -1,6 +1,5 @@
 class VideosController < ApplicationController
   before_action :authenticate_admin!
-  before_action :sorted_video, only: [:index, :create]
 
   def index
     @videos = Video.all
@@ -43,7 +42,7 @@ class VideosController < ApplicationController
 
   private
     def video_params
-      params.require(:video).permit(:name, :category, :link)
+      params.require(:video).permit(:name, :link, {video_category_ids: []})
     end
 
 end

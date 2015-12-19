@@ -1,3 +1,13 @@
+<%= javascript_tag "function owlPhoto(x) {
+		x.owlCarousel({
+			autoplay: 3000,
+			items: 5,
+			pagination: false,
+			loop: true,
+			autoplayHoverPause: true
+		});
+	}" %>
+
 <div id="photo">
 	<div class="fifty center marginTop200">
 		<h1>Photo</h1>
@@ -7,10 +17,10 @@
 		<%= image_tag("test.png", class:"vara_big_pic") %>
 		<div class="marginTopMin"></div>
 	</div>
-
-	<%= render "photos/anchor", title: "head", var: @photos_head , big_title: "Headshots"  %>
-	<%= render "photos/anchor", title: "event", var: @photos_event , big_title: "Events"  %>
-	<%= render "photos/anchor", title: "recreation", var: @photos_recreation , big_title: "Recreation" %>
+	<% @photo_cats.each do |cat| %>
+		<%= render "photos/anchor", title: cat.name.delete(" "), var: cat.photos , big_title: cat.name  %>
+	<% end %>
+	
 	<div class="marginTopMin"></div>
 </div>
 	

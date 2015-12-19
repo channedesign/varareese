@@ -1,0 +1,30 @@
+<%= render template: "shared/admins_header" %>
+<div class="container center">
+	<%= link_to((fa_icon 'arrow-left') + "      Manage #{type}", path, class: "btn btn-default") %>
+	<div class="row marginTop">
+		<div class="col-md-6 col-md-offset-3">
+			<%= simple_form_for var do |f| %>
+			<%= f.input :name %>
+			<%= f.submit "Add New Category", class: "btn btn-default" %>
+			<% end %>
+		</div>
+	</div>
+	<div class="col-md-6 col-md-offset-3 marginTop">
+		<table class="table table-striped">
+		    <thead>
+		      <tr>
+		        <th><%= type %> Category</th>
+		        <th>Delete</th>
+		      </tr>
+		    </thead>
+		    <tbody>
+			<% vars.each do |cat| %>
+				<tr>
+        			<td><%= cat.name %></td>
+        			<td><%= link_to("--delete--",video_category_path(cat), method: :delete) %></td>
+      			</tr>
+			<% end %>
+			</tbody>
+  		</table>
+	</div>
+</div>

@@ -8,24 +8,21 @@
 		<div class="col-md-6">
 			<h3>Edit Your Photo</h3>
 			<ul class="nav nav-tabs">
-				<li class="active"><a data-toggle="tab" data-target="#all_photos">All Photos</a></li>
-				<li><a data-toggle="tab" data-target="#head_photos">Headshots</a></li>
-				<li><a data-toggle="tab" data-target="#event_photos">Events</a></li>
-				<li><a data-toggle="tab" data-target="#recreation_photos">Recreation</a></li>
+				<li class="active"><%= link_to("All Photos", "", data: { toggle: "tab", target: "#all_photos"}) %></li>
+				<% @photo_cats.each do |cat| %>
+					<li><%= link_to(cat.name, "", data: { toggle: "tab", target: "#" + cat.name.delete(" ") + "_photos"}) %></li> 
+				<% end %>
+				<li><%= link_to((fa_icon "plus"), new_photo_category_path, data: { toggle: "", target: "" }) %></li>
 			</ul>
 			<div class="tab-content" id="photo_tab">
 				<div id="all_photos" class="tab-pane fade in active">
 					<%= render("admins/tab_photo", var: @photos) %>
 				</div>
-				<div id="head_photos" class="tab-pane fade">
-					<%= render("admins/tab_photo", var: @photos_head) %>
-				</div>
-				<div id="event_photos" class="tab-pane fade">
-					<%= render("admins/tab_photo", var: @photos_event) %>
-				</div>
-				<div id="recreation_photos" class="tab-pane fade">
-					<%= render("admins/tab_photo", var: @photos_recreation) %>
-				</div>
+				<% @photo_cats.each do |cat| %>
+					<div id="<%= cat.name.delete(" ") %>_photos" class="tab-pane fade">
+						<%= render("admins/tab_photo", var: cat.photos) %>
+					</div>
+				<% end %>
 			</div>
 		</div>
 	</div>

@@ -1,6 +1,6 @@
 class PhotosController < ApplicationController
   before_action :authenticate_admin!
-  
+  before_action :sorted_photo
   def index
     @photos = Photo.all
   end
@@ -46,7 +46,7 @@ class PhotosController < ApplicationController
 
   private
     def photo_params
-      params.require(:photo).permit(:name, :category, :photo) 
+      params.require(:photo).permit(:name, :photo, {photo_category_ids: []}) 
     end
 
 end
