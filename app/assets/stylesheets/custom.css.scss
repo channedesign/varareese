@@ -64,9 +64,6 @@ a:hover {
 	background-color: #212121;
 }
 
-.testy {
-	padding-right: 25%;
-}
 
 /*-----------------    Nav    ------------------*/
 
@@ -199,7 +196,6 @@ a:hover {
 .video_background ul {
 	position: absolute;
 	top: 20px;
-	right: 37%;
 }
 
 .video_background li {
@@ -216,7 +212,6 @@ a:hover {
 	border-radius: 50%;
 	position: absolute;
 	top: 25%;
-	left: 33%;
 	background-color: rgba(200,200,200,0.5);
 	color: black;
 }
@@ -301,6 +296,15 @@ a:hover {
 	height: 50px;
 }
 
+.two_video_padding {
+	padding-right: 25%;
+}
+
+.testy {
+	padding-top: 20px;
+	border-bottom: 1px solid #f5f5f5;
+}
+
 /*-----------------    VideoCategories/new   ------------------*/
 
 .table-striped>tbody>tr:nth-child(odd)>td,
@@ -377,22 +381,24 @@ tr.found{
 /*---------------------------------------------------*/
 
 
+/*-----------------    1920    ------------------*/
 
-/*-----------------    1355    ------------------*/
-
-@media (max-width: 1355px) {
-	.video_carou iframe {
-		width: 280px;
-		height: 160px;
+@media (max-width: 1920px) {
+	.vara_logo_home {
+		left: 37%;
+	}
+	.video_background ul {
+		right: 40%;
 	}
 }
 
-/*-----------------    1150    ------------------*/
+/*-----------------    1445    ------------------*/
 
-@media (max-width: 1150px) {
-	.video_carou iframe {
-		width: 240px;
-		height: 140px;
+@media (max-width: 1445px) {
+	.vara_logo_home {
+		left: 33%;
+	}
+	.video_background ul {
+		right: 36%;
 	}
 }
-
