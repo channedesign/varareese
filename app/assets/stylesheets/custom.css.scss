@@ -194,7 +194,7 @@ a:hover {
 }
 
 .video_background ul {
-	position: absolute;
+	position: relative;
 	top: 20px;
 }
 
@@ -210,7 +210,7 @@ a:hover {
 	width: 500px;
 	height: 500px;
 	border-radius: 50%;
-	position: absolute;
+	position: relative;
 	top: 25%;
 	background-color: rgba(200,200,200,0.5);
 	color: black;
@@ -388,7 +388,7 @@ tr.found{
 		left: 37%;
 	}
 	.video_background ul {
-		right: 40%;
+		left: 39%;
 	}
 }
 
@@ -399,6 +399,6 @@ tr.found{
 		left: 33%;
 	}
 	.video_background ul {
-		right: 36%;
+		left: 35%;
 	}
 }
