@@ -9,18 +9,24 @@
 	}" %>
 
 <div id="photo">
-	<div class="fifty center marginTop200">
-		<h1>Photo</h1>
-		<p class="lead">Feel free to have a look at my work</p>
+	<div class="exo_container">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12 center marginTopMin">
+					<h1>Photo</h1>
+					<p class="lead">Feel free to have a look at my work</p>
+				</div>
+				<div class="marginTopMin col-md-8 col-md-offset-2">
+					<%= image_tag("test.png", class:"vara_big_pic") %>
+					<div class="marginTopMin"></div>
+				</div>
+			</div>
+		</div>
 	</div>
-	<div class="fifty">
-		<%= image_tag("test.png", class:"vara_big_pic") %>
-		<div class="marginTopMin"></div>
-	</div>
+
 	<% @photo_cats.each do |cat| %>
 		<%= render "photos/anchor", title: cat.name.delete(" "), var: cat.photos , big_title: cat.name  %>
 	<% end %>
-	
 	<div class="marginTopMin"></div>
 </div>
 	

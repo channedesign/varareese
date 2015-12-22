@@ -1,8 +1,8 @@
 <div class="anchor_video_<%= title %> center anchor_video">
 	<h2 class="big_title"><%= big_title %></h2>
-	<div class="video_carousel_<%= title %> video_carou">
+	<div class="video_carousel_<%= title %> video_carou<%= ' testy' if var.length == 2  %>">
 		<% var.each do |video| %>
-			<div class="video_size"><%= link_to("", "https://vimeo.com/" + video.link, class: "owl-video lazyload") %></div>
+			<div class="video_size" id="<%= var.length %>_item"><%= link_to("", "https://vimeo.com/" + video.link, class: "owl-video lazyload") %></div>
 		<% end %>
 	</div>
 	<div class="left_arrow_pic_div arrow_pic_div left_arrow_<%= title %>">
@@ -13,7 +13,18 @@
 	</div>
 </div>
 <script>
-	owlVideo($(".video_carousel_<%= title %>"));
-	arrow(".left_arrow_<%= title %>", $(".video_carousel_<%= title %>") , ".right_arrow_<%= title %>");
-	arrowHover($(".anchor_video_<%= title %>"), "<%= title %>");
+	var g = {items:4,pagination:false,video:true,merge:true,autoWidth:true};
+	if (<%= var.length %> <= 2) {
+		g.center = true;
+		owlVideo($(".video_carousel_<%= title %>"), g);
+	} else if (<%= var.length %> == 3) {
+		g.center = true;
+		g.startPosition = 1;
+		owlVideo($(".video_carousel_<%= title %>"), g);
+	} else {
+		g.center = false;
+		owlVideo($(".video_carousel_<%= title %>"), g);
+		arrow(".left_arrow_<%= title %>", $(".video_carousel_<%= title %>") , ".right_arrow_<%= title %>");
+		arrowHover($(".anchor_video_<%= title %>"), "<%= title %>");
+	}
 </script>
