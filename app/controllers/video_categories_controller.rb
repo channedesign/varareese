@@ -2,12 +2,12 @@ class VideoCategoriesController < ApplicationController
 	before_action :authenticate_admin!
 	def new
 		@video_cat = VideoCategory.new
-		@video_cats = VideoCategory.all
+		@video_cats = VideoCategory.order("position ASC")
 	end
 
 	def create
 		@video_cat = VideoCategory.new(video_category_params)
-		@video_cats = VideoCategory.all
+		@video_cats = VideoCategory.order("position ASC")
 
 		if @video_cat.save
 			redirect_to admins_video_path, notice: "Category created successfully"
@@ -17,7 +17,7 @@ class VideoCategoriesController < ApplicationController
 	end
 
 	def edit
-		@video_cats = VideoCategory.all
+		@video_cats = VideoCategory.order("position ASC")
 		@video_cat = VideoCategory.find(params[:id])
 	end
 
