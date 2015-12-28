@@ -44,7 +44,7 @@
 		</div>
 	</div>
 	<% @video_cats.each do |cat| %>
-		<%= render "videos/anchor", title: cat.name.delete(" "), var: cat.videos.order("position ASC") , big_title: cat.name  %>
+		<%= render "videos/anchor", title: cat.name.delete(" "), var: cat.videos.all , big_title: cat.name  %>
 	<% end %>
 	<div class="marginTopMin"></div>
 </div>
