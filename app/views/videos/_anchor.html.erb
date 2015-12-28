@@ -4,7 +4,7 @@
 		<% var.each do |video| %>
 			<div class="video_size" id="<%= var.length %>_item"><%= link_to("", "https://vimeo.com/" + video.link, class: "owl-video lazyload") %>
 			</div>
-			<div class="titles_links"><%= link_to(video.mag.upcase, video.mag_link, target: "_blank", class: "mag_link") %> - <%= video.name %></div>
+			<div class="titles_links"><%= link_to(video.mag, video.mag_link, target: "_blank", class: "mag_link") %> - <%= video.name %></div>
 		<% end %>
 	</div>
 	<div class="left_arrow_pic_div arrow_pic_div left_arrow_<%= title %>">
