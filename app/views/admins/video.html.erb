@@ -22,7 +22,7 @@
 				</div>
 				<% @video_cats.each do |cat| %>
 				<div id="<%= cat.name.delete(" ") %>_video" class="tab-pane fade">
-					<%= render("admins/tab", var: cat.videos) %>
+					<%= render("admins/tab", var: cat.videos.order("position ASC")) %>
 				</div>
 				<% end %>
 			</div>

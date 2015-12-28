@@ -2,7 +2,7 @@ class Video < ActiveRecord::Base
 	
 	has_and_belongs_to_many :video_categories
 
-
+	acts_as_list
 	validates :link, presence: { message: "A link is required!" }, uniqueness: { message: "Video has already been uploaded!" }
 	
 	

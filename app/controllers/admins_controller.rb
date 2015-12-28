@@ -8,9 +8,9 @@ class AdminsController < ApplicationController
 	end
 
 	def video 
-		@videos = Video.all
+		@videos = Video.order("position ASC")
 		@video = Video.new
-		@video_cats = VideoCategory.all
+		@video_cats = VideoCategory.order("position ASC")
 	end
 
 	def photo

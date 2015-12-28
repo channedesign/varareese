@@ -56,14 +56,26 @@ a:hover {
 	color: #212121;
 }
 
-.exo_container {
-	background-color: white;
+.titles_links {
+	position: absolute;
+	top:190px ;
+	left: -330px ;
+	white-space: nowrap;
 }
 
 .container {
 	background-color: #212121;
 }
 
+.big_title {
+	background: #505050;
+	background: -webkit-linear-gradient(left top, #505050 , #212121); /* For Safari 5.1 to 6.0 */
+  	background: -o-linear-gradient(left top, #505050, #212121); /* For Opera 11.1 to 12.0 */
+  	background: -moz-linear-gradient(left top, #505050, #212121); /* For Firefox 3.6 to 15 */
+	padding-top: 10px;
+	padding-left: 10px;
+	height: 50px;
+}
 
 /*-----------------    Nav    ------------------*/
 
@@ -73,8 +85,9 @@ a:hover {
 }
 
 .navbar {
-	background-color: rgba(250,250,250,1);
+	background-color: rgba(250,250,250,0.5);
 }
+
 
 .navbar .navbar-nav {
   display: inline-block;
@@ -211,14 +224,14 @@ a:hover {
 	height: 500px;
 	border-radius: 50%;
 	position: relative;
-	top: 25%;
+	top: 20%;
 	background-color: rgba(200,200,200,0.5);
 	color: black;
 }
 
 .vara_logo_title {
 	position: relative;
-	top: 90px;
+	top: 40px;
 }
 
 /*.vara_logo_home {
@@ -245,6 +258,13 @@ a:hover {
 	margin-top: 100vh;
 }
 
+.exo_container_video {
+	background: url("testy.jpg");
+	background-attachment: fixed;
+	background-size: cover;
+	background-position: center; 
+}
+
 .big_video {
 	height: 410px;
 }
@@ -257,8 +277,9 @@ a:hover {
 
 .video_size {
 	width: 330px;
-	height: 190px;
+	height: 215px;
 	margin-left: 20px;
+	padding-bottom: 30px;
 }
 
 .left_arrow_pic_div, .right_arrow_pic_div {
@@ -290,20 +311,98 @@ a:hover {
 	height: 100%;
 }
 
-.big_title {
-	background-color: #505050;
-	padding-top: 10px;
-	height: 50px;
-}
-
 .two_video_padding {
 	padding-right: 25%;
 }
 
-.testy {
+.video_bottom_border {
 	padding-top: 20px;
 	border-bottom: 1px solid #f5f5f5;
 }
+
+.mag_link {
+	color: #505050;
+}
+
+.mag_link:hover {
+	color: #f5f5f5;
+}
+
+.video_category_image {
+	width: 200px;
+	height: 110px;
+}
+
+.video_category_image_index {
+	width: 150px;
+	height: 100px;
+}
+
+.video_category_image_thumb {
+	width: 100px;
+	height: 50px;
+}
+
+.view {
+    width: 150px;
+    height: 100px;
+    float: left;
+    overflow: hidden;
+    position: relative;
+    text-align: center;
+    cursor: default;
+}
+.view .mask, .view .content {
+    width: 150px;
+    height: 100px;
+    position: absolute;
+    overflow: hidden;
+    top: 0;
+    left: 0
+}
+.view img {
+    display: block;
+    position: relative
+}
+.view h2 {
+    text-transform: uppercase;
+    text-align: center;
+    position: relative;
+    font-size: 15px;
+    padding: 10px;
+    background: rgba(0, 0, 0, 0.8);
+    margin: 20px 0 0 0
+}
+
+.view-tenth img { 
+	transform: scaleY(1);
+	transition: all 0.7s ease-in-out;
+}
+.view-tenth .mask { 
+    background-color: rgba(21, 21, 21, 0.3); 
+    transition: all 0.5s linear;
+    opacity: 0;
+}	
+.view-tenth h2{
+    background: transparent;
+    margin: 25px auto;
+    transform: scale(0);
+    color: #f5f5f5;
+    transition: all 0.5s linear;
+    opacity: 0;
+}
+.view-tenth:hover img { 
+	transform: scale(10);
+    opacity: 0;
+}
+.view-tenth:hover .mask { 
+	opacity: 1;
+}																			 
+.view-tenth:hover h2 { 
+    transform: scale(1);
+    opacity: 1;
+}
+
 
 /*-----------------    VideoCategories/new   ------------------*/
 
@@ -316,6 +415,13 @@ tr.found{
 
 .vara_big_pic {
 	width: 100%;
+}
+
+.exo_container_photo {
+	background: url("testy2.jpg");
+	background-attachment: fixed;
+	background-size: cover;
+	background-position: center; 
 }
 
 .vara_small_pic {
@@ -389,6 +495,9 @@ tr.found{
 	}
 	.video_background ul {
 		left: 39%;
+	}
+	.two_video_padding {
+		padding-right: 20%;
 	}
 }
 

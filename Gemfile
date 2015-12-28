@@ -3,7 +3,7 @@ source 'https://rubygems.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.4'
-# Use sqlite3 as the database for Active Record
+
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
@@ -42,7 +42,8 @@ gem 'paperclip'
 gem 'aws-sdk', '< 2.0'
 gem "font-awesome-rails"
 gem 'hermitage'
-
+gem 'acts_as_list'
+gem "passenger"
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

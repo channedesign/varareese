@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   get "admins/profile"
 
   resources :photos, except: [:show]
-  resources :video_categories, only: [:new, :create, :destroy]
+  resources :video_categories, except: [:index, :show]
   resources :photo_categories, only: [:new, :create, :destroy]
   resources :videos, except: [:show]
   devise_for :admins
