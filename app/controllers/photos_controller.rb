@@ -1,6 +1,5 @@
 class PhotosController < ApplicationController
   before_action :authenticate_admin!
-  before_action :sorted_photo
   def index
     @photos = Photo.all
   end

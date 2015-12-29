@@ -2,7 +2,7 @@
 <%= link_to((fa_icon 'arrow-left') + "      Manage Video", admins_video_path , class: "btn btn-default") %>
 	<div class="row marginTop">
 		<div class="col-md-6 col-md-offset-3">
-			<%= simple_form_for(@video_cat, html: {multipart: true}) do |f| %>
+			<%= simple_form_for @video_cat do |f| %>
 			<%= f.input :name %>
 			<%= f.input :position, collection: 1..@video_cats.length %>
 			<% if @video_cat.image.present? %>

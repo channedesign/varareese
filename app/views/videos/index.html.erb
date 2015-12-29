@@ -5,8 +5,10 @@
 	function arrow(x,y,z) {
 		$(x).click(function() {
 			y.trigger('prev.owl.carousel');
+			y.trigger('prev.owl.carousel');
 		});
 		$(z).click(function() {
+			y.trigger('next.owl.carousel');
 			y.trigger('next.owl.carousel');
 		});
 	}
@@ -18,27 +20,26 @@
 	  		$('.left_arrow_' + y).fadeOut('slow');
 	  		$('.right_arrow_' + y).fadeOut('slow');
 	  	});
-  	}" %>
+  	}
+  	" %>
 <div id="video">
 	<div class="exo_container_video">
-		<div class="container">
+		<div class="container testy fullHeight">
 			<div class="row">
 				<div class="col-md-12 center marginTopMin">
-				<h1>Video</h1>
-				<p class="lead">Feel free to have a look at my work</p>
+					<h1>Video</h1>
+					<p class="lead">Feel free to have a look at my work</p>
 				</div>
 			</div>
 			<div class="marginTopMin col-md-8">
 				<iframe class="big_video" src="https://player.vimeo.com/video/123171770?title=0&byline=0&portrait=0" width="100%" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
 			</div>
 			<% @video_cats.each do |cat| %>
-			<div class="marginTopMin col-md-2">
+			<div class="marginTopMin col-xs-2">
 				<div class="view view-tenth">
 					<%= image_tag(cat.image, class: "video_category_image_index") %>
 					<%= link_to('<div class="mask"><h2>'.html_safe + cat.name + '</h2></div>'.html_safe, "##{cat.name.delete(' ')}" ) %> 
-
 				</div>
-				
 			</div>
 			<% end %>
 		</div>

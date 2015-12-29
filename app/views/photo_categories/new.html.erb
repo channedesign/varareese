@@ -1,27 +1,19 @@
 <%= render template: "shared/admins_header" %>
 <div class="container center">
-	<%= link_to((fa_icon 'arrow-left') + "      Manage Photo", admins_photo_path , class: "btn btn-default") %>
-	<div class="row marginTop">
-		<div class="col-md-6 col-md-offset-3">
-			<%= simple_form_for @photo_cat do |f| %>
-			<%= f.input :name %>
-			<%= f.submit "Add New Category", class: "btn btn-default" %>
-			<% end %>
-		</div>
-	</div>
+	<%= render("photo_categories/form") %>
 	<div class="col-md-6 col-md-offset-3 marginTop">
 		<table class="table table-striped">
 		    <thead>
 		      <tr>
 		        <th>Photo Category</th>
-		        <th>Delete</th>
+		        <th>Edit/Delete</th>
 		      </tr>
 		    </thead>
 		    <tbody>
 			<% @photo_cats.each do |cat| %>
 				<tr>
         			<td><%= cat.name %></td>
-        			<td><%= link_to("--delete--", photo_category_path(cat), method: :delete) %></td>
+        			<td><%= link_to("--Edit--", edit_photo_category_path(cat)) %><%= link_to("--delete--", photo_category_path(cat), method: :delete) %></td>
       			</tr>
 			<% end %>
 			</tbody>

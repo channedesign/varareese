@@ -1,6 +1,6 @@
 class AdminsController < ApplicationController
 	before_action :authenticate_admin!
-	before_action :sorted_photo, only: [:photo]
+	
 
 
 	def index

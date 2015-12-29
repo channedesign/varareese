@@ -75,6 +75,7 @@ a:hover {
 	padding-top: 10px;
 	padding-left: 10px;
 	height: 50px;
+	width: 50%;
 }
 
 /*-----------------    Nav    ------------------*/
@@ -183,6 +184,10 @@ a:hover {
 	z-index: -1;
 }
 
+.photo_background {
+	display: none;
+}
+
 @media (min-aspect-ratio: 16/9) {
   .video_background iframe {
     height: 200%; top: -50%;
@@ -258,6 +263,10 @@ a:hover {
 	margin-top: 100vh;
 }
 
+.testy {
+	background-color: rgba(21,21,21, 0.5);
+}
+
 .exo_container_video {
 	background-image: image-url("testy.jpg");
 	background-attachment: fixed;
@@ -267,6 +276,7 @@ a:hover {
 
 .big_video {
 	height: 410px;
+	border: 5px solid #212121;
 }
 
 .anchor_video {
@@ -312,7 +322,7 @@ a:hover {
 }
 
 .two_video_padding {
-	padding-right: 25%;
+	margin-left: -3%;
 }
 
 .video_bottom_border {
@@ -346,7 +356,7 @@ a:hover {
 .view {
     width: 150px;
     height: 100px;
-    float: left;
+    
     overflow: hidden;
     position: relative;
     text-align: center;
@@ -362,7 +372,7 @@ a:hover {
 }
 .view img {
     display: block;
-    position: relative
+    position: relative;
 }
 .view h2 {
     text-transform: uppercase;
@@ -510,4 +520,69 @@ tr.found{
 	.video_background ul {
 		left: 35%;
 	}
+	.two_video_padding {
+		padding-right: 25%;
+	}
 }
+
+/*-----------------    990    ------------------*/
+
+@media (max-width: 990px) {
+	#nav {
+		display: block;
+	}
+	.video_background {
+		display: none;
+	}
+	.photo_background {
+		display: block;
+		background-image: image-url("testtest.JPG");
+		background-size: cover;
+		background-position: center;
+		background-attachment: fixed;
+	}
+	#video {
+		margin-top: 0px;
+	}
+	.vara_logo_home {
+		width: 400px;
+		height: 400px;
+		border-radius: 50%;
+		position: absolute;
+		top: 25%;
+		left:30%;
+		background-color: rgba(200,200,200,0.5);
+		color: black;
+	}
+	.vara_logo_title {
+		font-size: 0.8em;
+	}
+	.video_category_image_index {
+		width: 100px;
+		height: 100px;
+		border-radius: 50%;
+	}
+	.view {
+	    width: 100px;
+	    height: 100px;
+	    border-radius: 50%;
+	}
+	.view .mask, .view .content {
+	    width: 100px;
+	    height: 100px;
+	    border-radius: 50%;
+	}
+	.view h2 {
+	    font-size: 10px;
+	    padding: 12px;
+	    margin: 27px 0 0 0
+	}
+	.two_video_padding {
+		margin-left: 0;
+	}
+}
+
+
+
+
+

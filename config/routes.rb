@@ -9,7 +9,7 @@ Rails.application.routes.draw do
 
   resources :photos, except: [:show]
   resources :video_categories, except: [:index, :show]
-  resources :photo_categories, only: [:new, :create, :destroy]
+  resources :photo_categories, except: [:index, :show]
   resources :videos, except: [:show]
   devise_for :admins
   resources :contact_forms, only: [:new, :create]

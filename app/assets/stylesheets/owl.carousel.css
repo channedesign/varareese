@@ -168,13 +168,10 @@
 }
 .owl-carousel .owl-video-play-icon {
   position: absolute;
-  height: 80px;
-  width: 80px;
-  left: 50%;
-  top: 50%;
-  margin-left: -40px;
-  margin-top: -40px;
-  background: url("owl.video.play.png") no-repeat;
+  height: 100%;
+  width: 100%;
+  left: 0;
+  top: 0;
   cursor: pointer;
   z-index: 1;
   -webkit-backface-visibility: hidden;

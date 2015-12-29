@@ -17,6 +17,21 @@ class PhotoCategoriesController < ApplicationController
 		end
 	end
 
+	def edit
+		@photo_cats = PhotoCategory.all
+		@photo_cat = PhotoCategory.find(params[:id])
+	end
+
+	def update
+		@photo_cat = PhotoCategory.find(params[:id])
+
+		if @photo_cat.update_attributes(photo_category_params)
+			redirect_to new_photo_category_path, notice: "Category edited successfully"
+		else
+			render :edit, alert: "Category NOT updated"
+		end
+	end
+
 	def destroy
 		@photo_cat = PhotoCategory.find(params[:id]).destroy
 		redirect_to admins_photo_path, notice: "Photo category deleted successfully"
@@ -24,6 +39,6 @@ class PhotoCategoriesController < ApplicationController
 
 	private
 		def photo_category_params
-			params.require(:photo_category).permit(:name)
+			params.require(:photo_category).permit(:name, :position)
 		end
 end

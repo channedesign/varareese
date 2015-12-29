@@ -1,0 +1,12 @@
+
+<%= link_to((fa_icon 'arrow-left') + "      Manage Photo", admins_photo_path , class: "btn btn-default") %>
+	<div class="row marginTop">
+		<div class="col-md-6 col-md-offset-3">
+			<%= simple_form_for(@photo_cat, html: {multipart: true}) do |f| %>
+			<%= f.input :name %>
+			<%= f.input :position, collection: 1..@photo_cats.length %>
+			
+			<%= f.submit(@photo_cat.new_record? ? "Add New Category" : "Edit Category", class: "btn btn-default" )  %>
+			<% end %>
+		</div>
+	</div>

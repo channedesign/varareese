@@ -1,5 +1,5 @@
 class ContactFormsController < ApplicationController
-  before_action :sorted_photo, only: [:create]
+ 
 
   def new
   	@contact_form = ContactForm.new

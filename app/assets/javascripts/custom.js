@@ -1,7 +1,8 @@
 $(document).ready(function() {
 
+	
 
-	$(".fullHeight").css("max-height", $(window).height());
+	$(".fullHeight").css("min-height", $(window).height());
 	
 
 	//nav
