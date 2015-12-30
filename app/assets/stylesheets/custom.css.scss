@@ -539,19 +539,13 @@ tr.found{
 		height: 100%;
 		width: 100%;
 		background-image: image-url("testtest.JPG");
-		background-size: cover;
-		-webkit-background-size: cover;
-		-moz-background-size: cover;
-		-o-background-size: cover;
+		background-size:cover;
 		background-position: center;
-		position: fixed;
 		
-		z-index: -1;
-		margin-bottom: 100vh;
 	}
-	
+
 	#video {
-		margin-top: 0px;;
+		margin-top: 0;
 	}
 	.vara_logo_home {
 		width: 400px;
