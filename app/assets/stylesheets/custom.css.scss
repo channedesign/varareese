@@ -536,13 +536,11 @@ tr.found{
 	}
 	.photo_background {
 		display: block;
-		background-image: image-url("testtest.JPG");
+		background-image: image-url("testtest.JPG") no-repeat center center fixed;
 		background-size: cover;
 		-webkit-background-size: cover;
 		-moz-background-size: cover;
 		-o-background-size: cover;
-		background-position: center;
-		background-attachment: fixed;
 		height: 100%;
 		overflow: hidden;
 	}
