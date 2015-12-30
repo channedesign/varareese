@@ -578,7 +578,22 @@ tr.found{
 	}
 }
 
-@media (max-width: 400px) {
+/*-----------------    768    ------------------*/
+
+@media (max-width: 768px) {
+	.vara_logo_home {
+		width: 350px;
+		height: 350px;
+	}
+	.vara_logo_title {
+		font-size: 0.7em;
+	}
+}
+
+
+/*-----------------    650    ------------------*/
+
+@media (max-width: 650px) {
 	.vara_logo_home {
 		width: 300px;
 		height: 300px;
@@ -586,6 +601,14 @@ tr.found{
 	}
 	.vara_logo_title {
 		font-size: 0.5em;
+	}
+}
+
+/*-----------------    400    ------------------*/
+
+@media (max-width: 400px) {
+	.vara_logo_home {
+		left:20%;
 	}
 }
 
