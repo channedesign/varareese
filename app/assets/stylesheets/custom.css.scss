@@ -671,31 +671,16 @@ tr.found{
 
 @media (max-width: 330px) {
 	.vara_logo_home {
-		left:5%;
+		left:3%;
 	}
 	.big_video {
-		height: 100px;
+		height: 150px;
 		border: 1px solid #212121;
 	}
-	.video_category_image_index {
-		width: 50px;
-		height: 50px;
-	}
-	.view {
-	    width: 50px;
-	    height: 50px;
-	}
-	.view .mask, .view .content {
-	    width: 50px;
-	    height: 50px;
-	}
-	.view h2 {
-	    font-size: 8px;
-	    padding: 5px;
-	    margin: 15px 0 0 0
-	}
-	.transition {
-		height: 100px;
+	.video_size {
+		width: 300px;
+		height: 185px;
+		margin-left: 5px;
 	}
 }
 
