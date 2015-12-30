@@ -544,16 +544,14 @@ tr.found{
 		-moz-background-size: cover;
 		-o-background-size: cover;
 		background-position: center;
-		background-attachment: fixed;
-		overflow: hidden;
+		position: fixed;
+		
+		z-index: -1;
+		margin-bottom: 100vh;
 	}
-	body {
-		height:100%;
-		overflow: scroll;
-		-webkit-overflow-scrolling: touch;
-	}
+	
 	#video {
-		margin-top: 0px;
+		margin-top: 0px;;
 	}
 	.vara_logo_home {
 		width: 400px;
