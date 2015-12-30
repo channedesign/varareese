@@ -268,15 +268,14 @@ a:hover {
 }
 
 .exo_container_video {
-	background-image: image-url("testy.jpg");
+	background-image: image-url("vara_video_background.jpg");
 	background-attachment: fixed;
 	background-size: cover;
 	background-position: center; 
 }
 
 .big_video {
-	height: 410px;
-	border: 5px solid #212121;
+	height: 430px;
 }
 
 .anchor_video {
@@ -525,6 +524,30 @@ tr.found{
 	}
 }
 
+/*-----------------    1200    ------------------*/
+
+@media (max-width: 1200px) {
+	.big_video {
+		height: 350px;
+	}
+	.video_category_image_index {
+		width: 130px;
+		height: 80px;
+	}
+	.view {
+    	width: 130px;
+    	height: 80px;
+	}
+	.view .mask, .view .content {
+    width: 130px;
+    height: 80px;
+	}
+	.view h2 {
+	    padding: 10px;
+	    margin: 15px 0 0 0
+	}
+}
+
 /*-----------------    1050/Lanscape    ------------------*/
 
 /* Landscape */
@@ -541,7 +564,7 @@ tr.found{
 	}
 	.photo_background {
 		display: block;
-		background-image: image-url("testtest.JPG");
+		background-image: image-url("vara_home_mobile.jpg");
 		background-size: cover;
 		background-position: center;
 	}
@@ -581,7 +604,7 @@ tr.found{
 	}
 	.photo_background {
 		display: block;
-		background-image: image-url("testtest.JPG");
+		background-image: image-url("vara_home_mobile.jpg");
 		background-size: cover;
 		background-position: center;
 	}
@@ -619,12 +642,15 @@ tr.found{
 	}
 	.photo_background {
 		display: block;
-		background-image: image-url("testtest.JPG");
+		background-image: image-url("vara_home_mobile.jpg");
 		background-size: cover;
-		background-position: center;
+		background-position: center center;
 	}
 	#video {
 		margin-top: 0px;
+	}
+	.big_video {
+		height: 400px;
 	}
 	.exo_container_video {
 		background-attachment: scroll;
@@ -688,7 +714,7 @@ tr.found{
 
 /* Landscape */
 @media only screen 
-  and (min-device-width: 375px) 
+  and (min-device-width: 320px) 
   and (max-device-width: 736px) 
   and (-webkit-min-device-pixel-ratio: 2)
   and (orientation: landscape) { 
@@ -737,9 +763,9 @@ tr.found{
 	}	
 }
 
-/*-----------------    400    ------------------*/
+/*-----------------    415    ------------------*/
 
-@media (max-width: 400px) {
+@media (max-width: 415px) {
 	.vara_logo_home {
 		left:10%;
 	}
