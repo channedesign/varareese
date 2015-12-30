@@ -1,7 +1,7 @@
 $(document).ready(function() {
 	$(".fullHeight_home").css("min-height", $(window).height());
 	if ($(window).width() > 990) {
-		$(".fullHeight_video").css("min-height", $(window).height());
+		$(".fullHeight_video, .fullHeight_photo ").css("min-height", $(window).height());
 	}
 
 	//nav
