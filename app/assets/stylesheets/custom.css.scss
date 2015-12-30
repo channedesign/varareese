@@ -540,6 +540,13 @@ tr.found{
 		background-size: cover;
 		background-position: center;
 		background-attachment: fixed;
+		height: 100%;
+		overflow: hidden;
+	}
+	body {
+		height:100%;
+		overflow: scroll;
+		-webkit-overflow-scrolling: touch;
 	}
 	#video {
 		margin-top: 0px;
@@ -575,25 +582,13 @@ tr.found{
 	.view h2 {
 	    font-size: 10px;
 	    padding: 12px;
-	    margin: 27px 0 0 0
+	    margin: 27px 0 0 0;
 	}
 	.two_video_padding {
 		margin-left: 0;
 	}
 }
 
-@media only screen 
-	and (min-device-width: 320px) 
-  	and (max-device-width: 568px)
-  	and (-webkit-min-device-pixel-ratio: 2)
-  	and (orientation: portrait) {
-  		.photo_background {
-			display: block;
-			background-image: image-url("testtest.JPG");
-			background-size: cover;
-			background-position: center;
-		}
-}
 
 
 
