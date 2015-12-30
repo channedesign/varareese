@@ -559,7 +559,10 @@ tr.found{
 	.video_category_image_index {
 		width: 100px;
 		height: 100px;
-		border-radius: 50%;
+		border-radius: 100%;
+	}
+	.col-xs-2 {
+		margin-left: 10px;
 	}
 	.view {
 	    width: 100px;
@@ -639,7 +642,7 @@ tr.found{
 		left:10%;
 	}
 	.big_video {
-		height: 220px;
+		height: 200px;
 		border: 2px solid #212121;
 	}
 	.video_category_image_index {
@@ -662,8 +665,37 @@ tr.found{
 	.transition {
 		height: 100px;
 	}
-
-
 }
 
+/*-----------------    330    ------------------*/
+
+@media (max-width: 330px) {
+	.vara_logo_home {
+		left:5%;
+	}
+	.big_video {
+		height: 100px;
+		border: 1px solid #212121;
+	}
+	.video_category_image_index {
+		width: 50px;
+		height: 50px;
+	}
+	.view {
+	    width: 50px;
+	    height: 50px;
+	}
+	.view .mask, .view .content {
+	    width: 50px;
+	    height: 50px;
+	}
+	.view h2 {
+	    font-size: 8px;
+	    padding: 5px;
+	    margin: 15px 0 0 0
+	}
+	.transition {
+		height: 100px;
+	}
+}
 
