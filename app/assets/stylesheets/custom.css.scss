@@ -527,11 +527,15 @@ tr.found{
 
 /*-----------------    1050    ------------------*/
 
+/* Landscape */
 @media only screen 
   and (min-device-width: 768px) 
   and (max-device-width: 1050px) 
   and (orientation: landscape) 
   and (-webkit-min-device-pixel-ratio: 1) {
+  	#nav {
+		display: block;
+	}
   	.video_background {
 		display: none;
 	}
@@ -540,6 +544,26 @@ tr.found{
 		background-image: image-url("testtest.JPG");
 		background-size: cover;
 		background-position: center;
+	}
+	#video {
+		margin-top: 0px;
+	}
+	.exo_container_video {
+		background-attachment: scroll;
+	}
+	.vara_logo_home {
+		width: 400px;
+		height: 400px;
+		position: absolute;
+		top: 25%;
+		left:25%;
+	}
+	.vara_logo_title {
+		font-size: 0.8em;
+	}
+	.video_category_image_index {
+		width: 100px;
+		height: 70px;
 	}
 
 }
