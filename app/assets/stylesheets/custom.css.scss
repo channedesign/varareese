@@ -525,6 +525,27 @@ tr.found{
 	}
 }
 
+/*-----------------    1050    ------------------*/
+
+@media only screen 
+  and (min-device-width: 768px) 
+  and (max-device-width: 1050px) 
+  and (orientation: landscape) 
+  and (-webkit-min-device-pixel-ratio: 1) {
+  	.video_background {
+		display: none;
+	}
+	.photo_background {
+		display: block;
+		background-image: image-url("testtest.JPG");
+		background-size: cover;
+		background-position: center;
+	}
+
+}
+	
+
+
 /*-----------------    990    ------------------*/
 
 @media (max-width: 990px) {
@@ -594,6 +615,7 @@ tr.found{
 	.vara_logo_home {
 		width: 350px;
 		height: 350px;
+		left: 27%;
 	}
 	.vara_logo_title {
 		font-size: 0.7em;
@@ -649,6 +671,9 @@ tr.found{
 		width: 50px;
 		height: 50px;
 	}
+	.video_size {
+		margin-left: 10px;
+	}
 	.view {
 	    width: 50px;
 	    height: 50px;
@@ -678,8 +703,6 @@ tr.found{
 		border: 1px solid #212121;
 	}
 	.video_size {
-		width: 300px;
-		height: 185px;
 		margin-left: 5px;
 	}
 }
