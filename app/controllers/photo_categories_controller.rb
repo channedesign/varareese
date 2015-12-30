@@ -3,12 +3,12 @@ class PhotoCategoriesController < ApplicationController
 	
 	def new
 		@photo_cat = PhotoCategory.new
-		@photo_cats = PhotoCategory.all
+		@photo_cats = PhotoCategory.order("position ASC")
 	end
 
 	def create
 		@photo_cat = PhotoCategory.new(photo_category_params)
-		@photo_cats = PhotoCategory.all
+		@photo_cats = PhotoCategory.order("position ASC")
 		
 		if @photo_cat.save
 			redirect_to admins_photo_path, notice: "Photo category created successfully"
@@ -18,7 +18,7 @@ class PhotoCategoriesController < ApplicationController
 	end
 
 	def edit
-		@photo_cats = PhotoCategory.all
+		@photo_cats = PhotoCategory.order("position ASC")
 		@photo_cat = PhotoCategory.find(params[:id])
 	end
 

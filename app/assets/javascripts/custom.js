@@ -6,16 +6,18 @@ $(document).ready(function() {
 	
 
 	//nav
-	$(window).scroll(function() {
-		if ($(this).scrollTop() > 200) {
-			$("#nav").fadeIn("slow");
-		} else {
-			$("#nav").fadeOut("slow");
-		}
-	});
+	if ($(window).width() > 990) {
+		$(window).scroll(function() {
+			if ($(this).scrollTop() > 200) {
+				$("#nav").fadeIn("slow");
+			} else {
+				$("#nav").fadeOut("slow");
+			}
+		});
+	}
 
 	//SmoothScrolling
-    $(function() {
+	$(function() {
 	  $('a[href*=#]:not([href=#])').click(function() {
 		if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
 		  var target = $(this.hash);
@@ -29,6 +31,8 @@ $(document).ready(function() {
 		}
 	  });
 	});
+    
+	    
 
 
 });

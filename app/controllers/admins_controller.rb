@@ -16,7 +16,7 @@ class AdminsController < ApplicationController
 	def photo
 		@photos = Photo.all
 		@photo = Photo.new
-		@photo_cats = PhotoCategory.all
+		@photo_cats = PhotoCategory.order("position ASC")
 	end
 
 end

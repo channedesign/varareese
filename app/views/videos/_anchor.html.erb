@@ -17,14 +17,18 @@
 	<% end %>
 </div>
 <script>
-	var g = {items:4,pagination:false,video:true,merge:true,autoWidth:true,onTranslate:callback};
+	var g = {items:4,pagination:false,responsive:{0:{items:2},990:{items:4}},video:true,merge:true,autoWidth:true,onTranslate:callback};
 
 	if (<%= var.length %> <= 2) {
-		g.center = true;
+		if ($(window).width() > 990 ) {
+			g.center = true;
+		}
 		owlVideo($(".video_carousel_<%= title %>"), g);
 	} else if (<%= var.length %> == 3) {
-		g.center = true;
-		g.startPosition = 2;
+		if ($(window).width() > 990 ) {
+			g.center = true;
+			g.startPosition = 2;
+		}
 		owlVideo($(".video_carousel_<%= title %>"), g);
 	} else {
 		g.center = false;

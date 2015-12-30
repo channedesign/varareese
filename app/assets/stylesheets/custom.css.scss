@@ -507,7 +507,7 @@ tr.found{
 		left: 39%;
 	}
 	.two_video_padding {
-		padding-right: 20%;
+		margin-left: -10%;
 	}
 }
 
@@ -521,7 +521,7 @@ tr.found{
 		left: 35%;
 	}
 	.two_video_padding {
-		padding-right: 25%;
+		margin-left: -14%;
 	}
 }
 
@@ -582,7 +582,18 @@ tr.found{
 	}
 }
 
-
+@media only screen 
+	and (min-device-width: 320px) 
+  	and (max-device-width: 568px)
+  	and (-webkit-min-device-pixel-ratio: 2)
+  	and (orientation: portrait) {
+  		.photo_background {
+			display: block;
+			background-image: image-url("testtest.JPG");
+			background-size: cover;
+			background-position: center;
+		}
+}
 
 
 
