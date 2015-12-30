@@ -544,7 +544,7 @@ tr.found{
 		margin-top: 0px;
 	}
 	.exo_container_video {
-		
+		background-attachment: scroll;
 	}
 	.vara_logo_home {
 		width: 400px;
@@ -636,10 +636,10 @@ tr.found{
 
 @media (max-width: 400px) {
 	.vara_logo_home {
-		left:15%;
+		left:10%;
 	}
 	.big_video {
-		height: 250px;
+		height: 220px;
 		border: 2px solid #212121;
 	}
 	.video_category_image_index {
