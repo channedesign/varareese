@@ -68,14 +68,14 @@ a:hover {
 }
 
 .big_title {
-	background: #505050;
-	background: -webkit-linear-gradient(left top, #505050 , #212121); /* For Safari 5.1 to 6.0 */
-  	background: -o-linear-gradient(left top, #505050, #212121); /* For Opera 11.1 to 12.0 */
-  	background: -moz-linear-gradient(left top, #505050, #212121); /* For Firefox 3.6 to 15 */
+	background: #321111;
+	background: -webkit-linear-gradient(left top, #241e1e , #212121); /* For Safari 5.1 to 6.0 */
+  	background: -o-linear-gradient(left top, #241e1e, #212121); /* For Opera 11.1 to 12.0 */
+  	background: -moz-linear-gradient(left top, #241e1e, #212121); /* For Firefox 3.6 to 15 */
 	padding-top: 10px;
 	padding-left: 10px;
 	height: 50px;
-	width: 100%;
+	width: 50%;
 }
 
 /*-----------------    Nav    ------------------*/
@@ -88,7 +88,6 @@ a:hover {
 .navbar {
 	background-color: rgba(250,250,250,0.5);
 }
-
 
 .navbar .navbar-nav {
   display: inline-block;
@@ -267,6 +266,10 @@ a:hover {
 	background-color: rgba(21,21,21, 0.5);
 }
 
+.anchor_video {
+	position: relative;
+}
+
 .exo_container_video {
 	background-image: image-url("vara_video_background.jpg");
 	background-attachment: fixed;
@@ -276,12 +279,6 @@ a:hover {
 
 .big_video {
 	height: 430px;
-}
-
-.anchor_video {
-	position: relative;
-	top: 50px;
-	clear: both;
 }
 
 .video_size {
@@ -527,6 +524,12 @@ tr.found{
 /*-----------------    1200    ------------------*/
 
 @media (max-width: 1200px) {
+	.vara_logo_home {
+		left: 30%;
+	}
+	.video_background ul {
+		left: 32%;
+	}
 	.big_video {
 		height: 350px;
 	}
@@ -539,8 +542,8 @@ tr.found{
     	height: 80px;
 	}
 	.view .mask, .view .content {
-    width: 130px;
-    height: 80px;
+    	width: 130px;
+    	height: 80px;
 	}
 	.view h2 {
 	    padding: 10px;
@@ -548,7 +551,18 @@ tr.found{
 	}
 }
 
-/*-----------------    1050/Lanscape    ------------------*/
+/*-----------------    1100    ------------------*/
+
+@media (max-width: 1100px) {
+	.vara_logo_home {
+		left: 28%;
+	}
+	.video_background ul {
+		left: 30%;
+	}
+}
+
+/*-----------------    1050/Landscape    ------------------*/
 
 /* Landscape */
 @media only screen 
@@ -588,7 +602,9 @@ tr.found{
 		width: 120px;
 		height: 80px;
 	}
-
+	.hide_in_mobile_view {
+		display: none;
+	}
 }
 
 @media only screen 
@@ -628,6 +644,9 @@ tr.found{
 		width: 120px;
 		height: 80px;
 	}
+	.hide_in_mobile_view {
+		display: none;
+	}
 }
 
 
@@ -649,8 +668,12 @@ tr.found{
 	#video {
 		margin-top: 0px;
 	}
+	.big_title {
+		width: 100%;
+	}
 	.big_video {
 		height: 400px;
+		margin-bottom: 50px;
 	}
 	.exo_container_video {
 		background-attachment: scroll;
@@ -695,6 +718,9 @@ tr.found{
 	.transition {
 		height: 200px;
 	}
+	.hide_in_mobile_view {
+		display: none;
+	}
 }
 
 /*-----------------    768    ------------------*/
@@ -707,6 +733,11 @@ tr.found{
 	}
 	.vara_logo_title {
 		font-size: 0.7em;
+	}
+	.navbar-default .navbar-nav > .active > a, 
+ 		.navbar-default .navbar-nav > .active > a:hover, 
+ 		.navbar-default .navbar-nav > .active > a:focus {
+  			
 	}
 }
 
@@ -742,7 +773,6 @@ tr.found{
 	}
 	.big_video {
 		height: 320px;
-		border: 2px solid #212121;
 	}
 	.video_category_image_index {
 		width: 70px;
@@ -771,7 +801,6 @@ tr.found{
 	}
 	.big_video {
 		height: 200px;
-		border: 2px solid #212121;
 	}
 	.video_category_image_index {
 		width: 50px;
@@ -806,7 +835,6 @@ tr.found{
 	}
 	.big_video {
 		height: 150px;
-		border: 1px solid #212121;
 	}
 	.video_size {
 		margin-left: 5px;
