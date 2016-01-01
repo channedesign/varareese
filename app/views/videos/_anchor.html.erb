@@ -34,9 +34,10 @@
 		g.center = false;
 		owlVideo($(".video_carousel_<%= title %>"), g);
 	}
-	arrow(".left_arrow_<%= title %>", $(".video_carousel_<%= title %>") , ".right_arrow_<%= title %>");
-	arrowHover($(".anchor_video_<%= title %>"), "<%= title %>");
-	
+	if ($(window).width() > 990 ) {
+		arrow(".left_arrow_<%= title %>", $(".video_carousel_<%= title %>") , ".right_arrow_<%= title %>");
+		arrowHover($(".anchor_video_<%= title %>"), "<%= title %>");
+	}
 	if ($(window).width() > 990 ) {
 	function callback(event) {
     	$(".video_size_<%= title %>").css({"width" : "330px", "min-height" : "215px"});
