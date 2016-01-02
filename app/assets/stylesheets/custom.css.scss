@@ -562,6 +562,71 @@ tr.found{
 	}
 }
 
+/*-----------------    1400/Landscape    ------------------*/
+
+@media only screen 
+  and (min-device-width: 1000px) 
+  and (max-device-width: 1400px) 
+  and (orientation: landscape)  {
+  	#nav {
+		display: block;
+	}
+  	.video_background {
+		display: none;
+	}
+	.photo_background {
+		display: block;
+		background-image: image-url("vara_home_mobile.jpg");
+		background-size: cover;
+		background-position: center;
+	}
+	#video {
+		margin-top: 0px;
+	}
+	.exo_container_video {
+		background-attachment: scroll;
+	}
+  }
+
+  /*-----------------    1400/portrait    ------------------*/
+
+@media only screen 
+  and (min-device-width: 1000px) 
+  and (max-device-width: 1400px) 
+  and (orientation: portrait)  {
+  	#nav {
+		display: block;
+	}
+  	.video_background {
+		display: none;
+	}
+	.photo_background {
+		display: block;
+		background-image: image-url("vara_home_mobile.jpg");
+		background-size: cover;
+		background-position: center;
+	}
+	#video {
+		margin-top: 0px;
+	}
+	.exo_container_video {
+		background-attachment: scroll;
+	}
+	.vara_logo_home {
+		left:25%;
+	}
+	.vara_logo_title {
+		font-size: 0.8em;
+	}
+	.video_category_image_index {
+		width: 120px;
+		height: 80px;
+	}
+	.hide_in_mobile_view {
+		display: none;
+	}
+  }
+
 /*-----------------    1050/Landscape    ------------------*/
 
 /* Landscape */
