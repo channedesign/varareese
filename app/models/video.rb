@@ -1,6 +1,6 @@
 class Video < ActiveRecord::Base
 	
-	before_save :thumb
+	before_validation :thumb
 
 	has_and_belongs_to_many :video_categories
 
