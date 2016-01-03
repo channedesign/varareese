@@ -3,6 +3,7 @@ class VideosController < ApplicationController
 
   def index
     @videos = Video.order("position ASC")
+    @video_show = Video.where(name: "Reel").first
     
   end
 

@@ -21,14 +21,14 @@
 
 <div id="photo">
 	<div class="exo_container_photo">
-		<div class="container testy fullHeight_photo">
+		<div class="container light_bakground fullHeight_photo">
 			<div class="row">
 				<div class="col-md-12 center marginTopMin">
 					<h1>Photo</h1>
-					<p class="lead">Feel free to have a look at my work</p>
+					<p class="lead">It all started here. I began as a professional photographer and eventually branched into the motion picture world. Even though my central focus is video, I still love still photography and offer photo services which include head shots, events and weddings.</p>
 				</div>
 				<div class="marginTopMin col-md-8 col-md-offset-2">
-					<%= image_tag("test.png", class:"vara_big_pic") %>
+					<%= image_tag( @photo_show.photo, class:"vara_big_pic") %>
 					<div class="marginTopMin"></div>
 				</div>
 			</div>
@@ -38,6 +38,5 @@
 	<% @photo_cats.each do |cat| %>
 		<%= render "photos/anchor", title: cat.name.delete(" "), var: cat.photos , big_title: cat.name  %>
 	<% end %>
-	<div class="marginTopMin"></div>
 </div>
 	

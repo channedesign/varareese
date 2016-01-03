@@ -2,6 +2,7 @@ class PhotosController < ApplicationController
   before_action :authenticate_admin!
   def index
     @photos = Photo.all
+    @photo_show = Photo.where(name: "Reel").first
   end
 
   def show

@@ -1,0 +1,58 @@
+<div class="anchor_video_<%= title %> anchor_video">
+	<h2 class="big_title" id="<%= title %>"><%= big_title %></h2>
+	<div class="video_carousel_<%= title %> video_carou<%= ' two_video_padding' if var.length == 2  %>">
+		<% var.each do |video| %>
+			<div class="video_size video_size_<%= title %>" id="<%= var.length %>_item"><%= link_to("", "https://vimeo.com/" + video.link, class: "owl-video lazyload") %>
+			</div>
+			<div class="titles_links"><%= link_to(video.mag.upcase, video.mag_link, target: "_blank", class: "mag_link") %> - <%= video.name %></div>
+		<% end %>
+	</div>
+	<% if var.length >= 4 %>
+		<div class="left_arrow_pic_div arrow_pic_div left_arrow_<%= title %>">
+			<%= image_tag("left_arrow.png", class: "arrow_pic", id: "left_arrow_pic") %>
+		</div>
+		<div class="right_arrow_pic_div arrow_pic_div right_arrow_<%= title %>">
+			<%= image_tag("right_arrow.png", class: "arrow_pic", id: "right_arrow_pic") %>
+		</div>
+	<% end %>
+</div>
+<script>
+	var g = {items:4,pagination:false,responsive:{0:{items:2},990:{items:4}},video:true,merge:true,autoWidth:true};
+
+	if (<%= var.length %> <= 2) {
+		if ($(window).width() > 990 ) {
+			g.center = true;
+		}
+		owlVideo($(".video_carousel_<%= title %>"), g);
+	} else if (<%= var.length %> == 3) {
+		if ($(window).width() > 990 ) {
+			g.center = true;
+			g.startPosition = 2;
+		}
+		owlVideo($(".video_carousel_<%= title %>"), g);
+	} else {
+		g.center = false;
+		owlVideo($(".video_carousel_<%= title %>"), g);
+	}
+	if ($(window).width() > 990 ) {
+		arrow(".left_arrow_<%= title %>", $(".video_carousel_<%= title %>") , ".right_arrow_<%= title %>");
+		arrowHover($(".anchor_video_<%= title %>"), "<%= title %>");
+	}
+	/*if ($(window).width() > 990 ) {
+		function callback(event) {
+	    	$(".video_size_<%= title %>").css({"width" : "330px", "min-height" : "215px"});
+	    	$(".owl-video").css({"min-height" : "215px"})
+		}
+		$(".video_size_<%= title %>").click(function() {
+			$(this).animate({"width" : "500px", "min-height" : "335px"});
+			$(this, ".owl-video").css({"min-height" : "335px"})
+		});
+		$(".video_carousel_<%= title %>").click(function()  {
+	    	$(".video_size_<%= title %>").css({"width" : "330px", "max-height" : "215px"});
+	    	$(".owl-video").css({"max-height" : "215px"})
+	    	
+		});
+	}*/
+	
+</script>
+	

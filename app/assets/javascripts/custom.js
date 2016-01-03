@@ -18,7 +18,7 @@ $(document).ready(function() {
 	//nav
 	if (($(window).width() > 990) && !(isTouchSupported()))  {
 		$(window).scroll(function() {
-			if ($(this).scrollTop() > 200) {
+			if ($(this).scrollTop() > ($(window).height() - 50)) {
 				$("#nav").fadeIn("slow");
 			} else {
 				$("#nav").fadeOut("slow");
@@ -34,7 +34,7 @@ $(document).ready(function() {
 		  target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
 		  if (target.length) {
 			$('html,body').animate({
-			  scrollTop: target.offset().top - 50
+			  scrollTop: target.offset().top
 			}, 1000);
 			return false;
 		  }

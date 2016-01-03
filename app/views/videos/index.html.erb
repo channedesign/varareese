@@ -4,12 +4,16 @@
 	}
 	function arrow(x,y,z) {
 		$(x).click(function() {
-			y.trigger('prev.owl.carousel');
-			y.trigger('prev.owl.carousel');
+			for(var i=0; i<4; i++){
+				y.trigger('prev.owl.carousel');
+			}
+				
+
 		});
 		$(z).click(function() {
-			y.trigger('next.owl.carousel');
-			y.trigger('next.owl.carousel');
+			for(var i=0; i<4; i++){
+				y.trigger('next.owl.carousel');
+			}
 		});
 	}
 	function arrowHover(x, y) {
@@ -24,16 +28,16 @@
   	" %>
 <div id="video">
 	<div class="exo_container_video">
-		<div class="container testy fullHeight_video">
+		<div class="container light_bakground fullHeight_video">
 			<div class="row">
 				<div class="col-md-12 center marginTopMin">
 					<h1>Video</h1>
-					<p class="lead">Feel free to have a look at my work</p>
+					<p class="lead">Fashion, Commercial, Events and Films... My passion and primary roles include camera operator and editor. I work with many talented individuals to bring these projects to life. Please sit back, click play and enjoy!</p>
 				</div>
 			</div>
 			<div class="row">
 				<div class="marginTopMin col-md-8">
-					<iframe class="big_video" src="https://player.vimeo.com/video/123171770?title=0&byline=0&portrait=0" width="100%" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+					<iframe class="big_video" src="https://player.vimeo.com/video/<%= @video_show.link %>?title=0&byline=0&portrait=0" width="100%" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
 				</div>
 				<div class="hide_in_mobile_view">
 					<% @video_cats.each do |cat| %>
@@ -51,7 +55,5 @@
 	<% @video_cats.each do |cat| %>
 		<%= render "videos/anchor", title: cat.name.delete(" "), var: cat.videos.order("position ASC") , big_title: cat.name  %>
 	<% end %>
-	<div class="marginTopMin"></div>
-</div>
-<div class="container video_bottom_border">
+	
 </div>
