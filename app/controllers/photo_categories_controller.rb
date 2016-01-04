@@ -1,6 +1,5 @@
 class PhotoCategoriesController < ApplicationController
 	before_action :authenticate_admin!
-	
 	def new
 		@photo_cat = PhotoCategory.new
 		@photo_cats = PhotoCategory.order("position ASC")
@@ -39,6 +38,6 @@ class PhotoCategoriesController < ApplicationController
 
 	private
 		def photo_category_params
-			params.require(:photo_category).permit(:name, :position)
+			params.require(:photo_category).permit(:name, :position, :image)
 		end
 end

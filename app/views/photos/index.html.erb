@@ -23,13 +23,22 @@
 	<div class="exo_container_photo">
 		<div class="container light_bakground fullHeight_photo">
 			<div class="row">
-				<div class="col-md-12 center marginTopMin">
+				<div class="col-md-8 col-md-offset-2 center marginTopMin">
 					<h1>Photo</h1>
 					<p class="lead">It all started here. I began as a professional photographer and eventually branched into the motion picture world. Even though my central focus is video, I still love still photography and offer photo services which include head shots, events and weddings.</p>
 				</div>
 				<div class="marginTopMin col-md-8 col-md-offset-2">
 					<%= image_tag( @photo_show.photo, class:"vara_big_pic") %>
-					<div class="marginTopMin"></div>
+				</div>
+				<div class="hide_in_mobile_view push_left">
+					<% @photo_cats.each do |cat| %>
+					<div class="marginTopMin col-xs-4">
+						<div class="view view-tenth">
+							<%= image_tag(cat.image, class: "video_category_image_index") %>
+							<%= link_to('<div class="mask"><h2>'.html_safe + cat.name + '</h2></div>'.html_safe, "##{cat.name.delete(' ')}" ) %> 
+						</div>
+					</div>
+					<% end %>
 				</div>
 			</div>
 		</div>

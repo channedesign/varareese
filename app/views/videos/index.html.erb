@@ -30,18 +30,18 @@
 	<div class="exo_container_video">
 		<div class="container light_bakground fullHeight_video">
 			<div class="row">
-				<div class="col-md-12 center marginTopMin">
+				<div class="col-md-8 col-md-offset-2 center marginTopMin">
 					<h1>Video</h1>
 					<p class="lead">Fashion, Commercial, Events and Films... My passion and primary roles include camera operator and editor. I work with many talented individuals to bring these projects to life. Please sit back, click play and enjoy!</p>
 				</div>
 			</div>
 			<div class="row">
-				<div class="marginTopMin col-md-8">
+				<div class="marginTopMin col-md-8 col-md-offset-2">
 					<iframe class="big_video" src="https://player.vimeo.com/video/<%= @video_show.link %>?title=0&byline=0&portrait=0" width="100%" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
 				</div>
-				<div class="hide_in_mobile_view">
+				<div class="hide_in_mobile_view push_left">
 					<% @video_cats.each do |cat| %>
-					<div class="marginTopMin col-xs-2">
+					<div class="marginTopMin col-xs-4">
 						<div class="view view-tenth">
 							<%= image_tag(cat.image, class: "video_category_image_index") %>
 							<%= link_to('<div class="mask"><h2>'.html_safe + cat.name + '</h2></div>'.html_safe, "##{cat.name.delete(' ')}" ) %> 

@@ -6,6 +6,7 @@
 		    <thead>
 		      <tr>
 		        <th>Photo Category</th>
+		        <th>Image</th>
 		        <th>Edit/Delete</th>
 		      </tr>
 		    </thead>
@@ -13,6 +14,7 @@
 			<% @photo_cats.each do |cat| %>
 				<tr>
         			<td><%= cat.name %></td>
+        			<td><%= image_tag(cat.image, class: "video_category_image_thumb") %></td>
         			<td><%= link_to("--Edit--", edit_photo_category_path(cat)) %><%= link_to("--delete--", photo_category_path(cat), method: :delete) %></td>
       			</tr>
 			<% end %>
