@@ -2,9 +2,21 @@
 	<h2 class="big_title" id="<%= title %>"><%= big_title %></h2>
 	<div class="video_carousel_<%= title %> video_carou<%= ' two_video_padding' if var.length == 2  %>">
 		<% var.each do |video| %>
-			<div class="video_size video_size_<%= title %> item_video" id="<%= var.length %>_item"><%= link_to("", "https://vimeo.com/" + video.link, class: "owl-video lazyload") %>
+			
+			<div class="video_size video_size_<%= title %> item_video" id="<%= var.length %>_item">
+				<%= link_to(image_tag(video.thumb_link), "", data: {featherlight: "#feather_box_#{video.link}" }, class: "video_img_thumb_#{video.link} lazyload") %>
 			</div>
+			
 			<div class="titles_links"><%= link_to(video.mag.upcase, video.mag_link, target: "_blank", class: "mag_link") %> - <%= video.name %></div>
+			<iframe class="lightbox box_dimension lazyload" id="feather_box_<%= video.link %>" data-src="https://player.vimeo.com/video/<%= video.link %>?title=0&byline=0&portrait=0" src="about:blank" width="100%" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+			<script>
+			$(document).ready(function() {
+				var lightBox = $("#feather_box_<%= video.link %>");
+				$(".video_img_thumb_<%= video.link %>").hover(function() {
+					lightBox.attr("src", lightBox.data("src"));
+				});
+			});
+			</script>
 		<% end %>
 	</div>
 	<% if var.length >= 4 %>
@@ -16,31 +28,32 @@
 		</div>
 	<% end %>
 </div>
+
+
 <script>
-	var g = {items:4,pagination:false,video:true,merge:true,autoWidth:true,onTranslate:callback, onVideoStop:callback};
+	var g = {items:4,pagination:false,responsive:{0:{items:2},990:{items:4}},autoWidth:true};
 
 	if (<%= var.length %> <= 2) {
-		g.center = true;
+		if ($(window).width() > 990 ) {
+			g.center = true;
+		}
 		owlVideo($(".video_carousel_<%= title %>"), g);
 	} else if (<%= var.length %> == 3) {
-		g.center = true;
-		g.startPosition = 2;
+		if ($(window).width() > 990 ) {
+			g.startPosition = 4;
+			g.center = true;
+		}
 		owlVideo($(".video_carousel_<%= title %>"), g);
 	} else {
 		g.center = false;
 		owlVideo($(".video_carousel_<%= title %>"), g);
 	}
-	arrow(".left_arrow_<%= title %>", $(".video_carousel_<%= title %>") , ".right_arrow_<%= title %>");
-	arrowHover($(".anchor_video_<%= title %>"), "<%= title %>");
-	function callback(event) {
-    	$(".video_size_<%= title %>").css({"width" : "330px", "min-height" : "215px", "position" : "relative"});
-    	$(".owl-video").css({"min-height" : "215px"})
+	if ($(window).width() > 990 ) {
+		arrow(".left_arrow_<%= title %>", $(".video_carousel_<%= title %>") , ".right_arrow_<%= title %>");
+		arrowHover($(".anchor_video_<%= title %>"), "<%= title %>");
 	}
-	$(".video_size_<%= title %>").click(function() {
-		$(this).animate({"width" : "600px", "min-height" : "365px", "position" : "relative"});
-		$(this, ".owl-video").css({"min-height" : "365px"})
-	});
-
+	
+	
 	
 </script>
 	

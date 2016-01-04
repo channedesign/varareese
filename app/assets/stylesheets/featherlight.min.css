@@ -69,6 +69,14 @@
 
 		/* reset white-space wrapping */
 		white-space: normal;
+		border-radius: 10px;
+	}
+
+	.lightbox_thumb {
+		position: relative;
+		height: 30px;
+		width: 100px;
+		z-index: 9999;
 	}
 
 	/* contains the content */
@@ -81,8 +89,8 @@
 		/* position: centering vertical and horizontal */
 		position: absolute;
 		z-index: 9999;
-		top: 0;
-		right: 0;
+		top: 0px;
+		left: 0px;
 
 		/* dimensions: 25px x 25px */
 		line-height: 25px;
@@ -97,6 +105,9 @@
 		color: #fff;
 	}
 
+	.featherlight .featherlight-close-icon:hover {
+		color: #000;
+	}
 
 	.featherlight .featherlight-image {
 		/* styling */

@@ -4,11 +4,15 @@
 		<% var.each do |video| %>
 			
 			<div class="video_size video_size_<%= title %> item_video" id="<%= var.length %>_item">
-				<%= link_to(image_tag(video.thumb_link), "", data: {featherlight: "#feather_box_#{video.link}" }, class: "lazyload video_img_thumb_#{video.link}, lazyload") %>
+				<%= link_to(image_tag(video.thumb_link), "", data: {featherlight: "#feather_box_#{video.link}" }, class: "video_img_thumb_#{video.link} lazyload") %>
 			</div>
 			
 			<div class="titles_links"><%= link_to(video.mag.upcase, video.mag_link, target: "_blank", class: "mag_link") %> - <%= video.name %></div>
-			<iframe class="lightbox box_dimension lazyload" id="feather_box_<%= video.link %>" data-src="https://player.vimeo.com/video/<%= video.link %>?title=0&byline=0&portrait=0" src="about:blank" width="100%" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+			
+			<iframe class="lightbox box_dimension lazyload " id="feather_box_<%= video.link %>" data-src="https://player.vimeo.com/video/<%= video.link %>?title=0&byline=0&portrait=0" src="about:blank" width="100%" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen>
+			</iframe>
+				
+			
 			<script>
 			$(document).ready(function() {
 				var lightBox = $("#feather_box_<%= video.link %>");

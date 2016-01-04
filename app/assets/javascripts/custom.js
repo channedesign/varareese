@@ -1,8 +1,7 @@
 $(document).ready(function() {
 	$(".fullHeight_home").css("min-height", $(window).height());
-	if ($(window).width() > 990) {
-		$(".fullHeight_video, .fullHeight_photo ").css("min-height", $(window).height());
-	}
+
+
 
 	//Detect if touch device
 	function isTouchSupported() {
@@ -24,7 +23,12 @@ $(document).ready(function() {
 				$("#nav").fadeOut("slow");
 			}
 		});
+		$(".to_home").click(function() {
+			$("body").scrollTop(0);
+		});
 	}
+
+	
 
 	//SmoothScrolling
 	$(function() {
