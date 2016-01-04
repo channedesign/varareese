@@ -417,7 +417,7 @@ a:hover {
 
 .box_dimension {
 	width: 700px;
-	height: 500px;
+	height: 400px;
 }
 
 /*-----------------    VideoCategories/new   ------------------*/
@@ -761,7 +761,7 @@ footer {
 		background-position: center center;
 	}
 	#video {
-		margin-top: 0px;
+		margin-top:0;
 	}
 	.box_dimension {
 		width: 500px;
@@ -838,6 +838,10 @@ footer {
  		.navbar-default .navbar-nav > .active > a:focus {
   			margin:0;
 	}
+	.box_dimension {
+		width: 450px;
+		height: 250px;
+	}
 }
 
 /*-----------------    736    ------------------*/
@@ -909,11 +913,15 @@ footer {
 	/*.vara_logo_home {
 		left:10%;
 	}*/
+	.vara_logo_title {
+		position: relative;
+		top: 30px;
+	}
 	.big_video {
 		height: 200px;
 	}
 	.box_dimension {
-		width: 300px;
+		width: 260px;
 		height: 150px;
 	}
 	.video_category_image_index {
@@ -953,5 +961,9 @@ footer {
 	.video_size {
 		margin-left: 5px;
 	}
+
+	.vara_logo_title h1 {
+		font-size: 5em;
+	} 
 }
 
