@@ -4,16 +4,10 @@
 	}
 	function arrow(x,y,z) {
 		$(x).click(function() {
-			for(var i=0; i<4; i++){
-				y.trigger('prev.owl.carousel');
-			}
-				
-
+			y.trigger('prev.owl.carousel');
 		});
 		$(z).click(function() {
-			for(var i=0; i<4; i++){
-				y.trigger('next.owl.carousel');
-			}
+			y.trigger('next.owl.carousel');
 		});
 	}
 	function arrowHover(x, y) {

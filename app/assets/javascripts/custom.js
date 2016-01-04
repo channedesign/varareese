@@ -24,7 +24,8 @@ $(document).ready(function() {
 			}
 		});
 		$(".to_home").click(function() {
-			$("body").scrollTop(0);
+			$("body").animate({scrollTop: 0}, 1500);
+			return false;
 		});
 	}
 

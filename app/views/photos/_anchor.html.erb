@@ -12,6 +12,8 @@
 </div>
 <script>
 	owlPhoto($(".photo_carousel_<%= title %>"));
-	arrow(".left_arrow_<%= title %>", $(".photo_carousel_<%= title %>") , ".right_arrow_<%= title %>");
-	arrowHover($(".anchor_photo_<%= title %>"), "<%= title %>");
+	if ($(window).width() > 990 ) {
+		arrow(".left_arrow_<%= title %>", $(".photo_carousel_<%= title %>") , ".right_arrow_<%= title %>");
+		arrowHover($(".anchor_photo_<%= title %>"), "<%= title %>");
+	}
 </script>

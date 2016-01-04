@@ -2,27 +2,33 @@
 	<h2 class="big_title" id="<%= title %>"><%= big_title %></h2>
 	<div class="video_carousel_<%= title %> video_carou<%= ' two_video_padding' if var.length == 2  %>">
 		<% var.each do |video| %>
-			
-			<div class="video_size video_size_<%= title %> item_video" id="<%= var.length %>_item">
-				<%= link_to(image_tag(video.thumb_link), "", data: {featherlight: "#feather_box_#{video.link}" }, class: "video_img_thumb_#{video.link} lazyload") %>
+			<div>
+				<div class="video_size video_size_<%= title %>" id="<%= var.length %>_item">
+					<%= link_to(image_tag(video.thumb_link), "", data: {featherlight: "#feather_box_#{video.link}" }, class: "video_img_thumb_#{video.link} lazyload") %>
+					
+				</div>
+				<div class="titles_links">
+					<%= link_to(video.mag.upcase, video.mag_link, target: "_blank", class: "mag_link") %> - <%= video.name %>
+				</div>
 			</div>
 			
-			<div class="titles_links"><%= link_to(video.mag.upcase, video.mag_link, target: "_blank", class: "mag_link") %> - <%= video.name %></div>
-			
-			<iframe class="lightbox box_dimension lazyload " id="feather_box_<%= video.link %>" data-src="https://player.vimeo.com/video/<%= video.link %>?title=0&byline=0&portrait=0" src="about:blank" width="100%" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen>
-			</iframe>
-				
-			
-			<script>
-			$(document).ready(function() {
-				var lightBox = $("#feather_box_<%= video.link %>");
-				$(".video_img_thumb_<%= video.link %>").hover(function() {
-					lightBox.attr("src", lightBox.data("src"));
-				});
-			});
-			</script>
 		<% end %>
 	</div>
+	<% var.each do |video| %>
+		<iframe class="lightbox box_dimension lazyload " id="feather_box_<%= video.link %>" data-src="https://player.vimeo.com/video/<%= video.link %>?title=0&byline=0&portrait=0" src="about:blank" width="100%" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen>
+		</iframe>
+			
+		
+		<script>
+		$(document).ready(function() {
+			var lightBox = $("#feather_box_<%= video.link %>");
+			$(".video_img_thumb_<%= video.link %>").hover(function() {
+				lightBox.attr("src", lightBox.data("src"));
+			});
+		});
+		</script>
+	<% end %>
+
 	<% if var.length >= 4 %>
 		<div class="left_arrow_pic_div arrow_pic_div left_arrow_<%= title %>">
 			<%= image_tag("left_arrow.png", class: "arrow_pic", id: "left_arrow_pic") %>
@@ -35,7 +41,7 @@
 
 
 <script>
-	var g = {items:4,pagination:false,responsive:{0:{items:2},990:{items:4}},autoWidth:true};
+	var g = {items:4,pagination:false,responsive:{0:{items:2},990:{items:4}},loop:true,autoWidth:true};
 
 	if (<%= var.length %> <= 2) {
 		if ($(window).width() > 990 ) {
@@ -44,7 +50,7 @@
 		owlVideo($(".video_carousel_<%= title %>"), g);
 	} else if (<%= var.length %> == 3) {
 		if ($(window).width() > 990 ) {
-			g.startPosition = 4;
+			g.startPosition = 1;
 			g.center = true;
 		}
 		owlVideo($(".video_carousel_<%= title %>"), g);
