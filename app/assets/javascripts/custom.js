@@ -1,6 +1,9 @@
 $(document).ready(function() {
 	$(".fullHeight_home").css("min-height", $(window).height());
-
+	if ($(window).width() <= 990) {
+		$(".to_home").attr("href", "#home")
+	}
+	
 
 	//Detect if touch device
 	function isTouchSupported() {
