@@ -2,7 +2,6 @@ $(document).ready(function() {
 	$(".fullHeight_home").css("min-height", $(window).height());
 
 
-
 	//Detect if touch device
 	function isTouchSupported() {
 	    var msTouchEnabled = window.navigator.msMaxTouchPoints;

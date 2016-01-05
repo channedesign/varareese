@@ -183,12 +183,12 @@ a:hover {
 /*-----------------    Admin/Photo    ------------------*/
 
 .mini_thumb_div {
-	margin-top: 30px;
+	margin-top: 20px;
 }
 
 .mini_thumb {
-	width: 100px;
-	height: 70px;
+	width: 130px;
+	height: 100px;
 }
 
 .dropzone {
@@ -447,8 +447,10 @@ tr.found{
 }
 
 .vara_small_pic {
-	width: 90%;
-	
+	width: 100%;
+	max-height: 250px;
+	/*-webkit-clip-path: inset(0 0 29% 0);
+	clip-path: inset(0 0 29% 0);*/
 }
 
 .vara_small_photo_div {
@@ -475,12 +477,12 @@ tr.found{
 }
 
 .left_arrow_pic_div_photo {
-	top: 100px;
+	top: 130px;
 	left: 0;
 }
 
 .right_arrow_pic_div_photo {
-	top: 100px;
+	top: 130px;
 	right: 0;
 }
 
@@ -596,6 +598,13 @@ footer {
 	.view h2 {
     	font-size: 20px;
    		margin: 40px 0 0 0
+	}
+	.left_arrow_pic_div_photo {
+		top: 115px;
+	}
+
+	.right_arrow_pic_div_photo {
+		top: 115px;
 	}
 }
 
