@@ -3,6 +3,7 @@ $(document).ready(function() {
 	if ($(window).width() <= 990) {
 		$(".to_home").attr("href", "#home")
 	}
+
 	
 
 	//Detect if touch device
@@ -30,7 +31,10 @@ $(document).ready(function() {
 			return false;
 		});
 	}
-
+	//remove mobile nav on click
+	$('.navbar-collapse a').click(function (e) {
+        $('.navbar-collapse').collapse('toggle');
+    });
 	
 
 	//SmoothScrolling
