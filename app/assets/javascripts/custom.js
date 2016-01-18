@@ -20,7 +20,7 @@ $(document).ready(function() {
 	//nav
 	if (($(window).width() > 990) && !(isTouchSupported()))  {
 		$(window).scroll(function() {
-			if ($(this).scrollTop() > ($(window).height() - 100)) {
+			if ($(this).scrollTop() > ($(window).height() - 55)) {
 				$("#nav").fadeIn("slow");
 			} else {
 				$("#nav").fadeOut("slow");
@@ -53,7 +53,16 @@ $(document).ready(function() {
 	  });
 	});
     
-	    
+	//Gallery Video init 
+	$('.gallery').featherlightGallery({
+		previousIcon: '<',
+    	nextIcon: '>',
+    	galleryFadeIn: 100,         
+		galleryFadeOut: 300
+	});
 
+	//Gallery Photo Custom Buttons
+	hermitage.navigationButtons.next.text = ">";
+	hermitage.navigationButtons.previous.text = "<";
 
 });
