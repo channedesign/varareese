@@ -1,5 +1,6 @@
 $(document).ready(function() {
 	$(".fullHeight_home").css("min-height", $(window).height());
+	$(".lightbox_thumb").hide();
 	if ($(window).width() <= 990) {
 		$(".to_home").attr("href", "#home")
 	}
@@ -58,11 +59,21 @@ $(document).ready(function() {
 		previousIcon: '<',
     	nextIcon: '>',
     	galleryFadeIn: 100,         
-		galleryFadeOut: 300
+		galleryFadeOut: 300,
+		afterOpen: function() {
+			$(".lightbox_thumb").show();
+		}, 
+		beforeClose: function() {
+			$(".lightbox_thumb").hide();
+		}
 	});
+
+	
 
 	//Gallery Photo Custom Buttons
 	hermitage.navigationButtons.next.text = ">";
 	hermitage.navigationButtons.previous.text = "<";
+
+	
 
 });

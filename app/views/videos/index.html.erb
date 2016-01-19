@@ -31,7 +31,9 @@
 			</div>
 			<div class="row">
 				<div class="marginTopMin col-md-8 col-md-offset-2">
-					<iframe class="big_video" src="https://player.vimeo.com/video/<%= @video_show.link %>?title=0&amp;byline=0&amp;portrait=0" width="100%" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+					<% if @video_show.present? %>
+						<iframe class="big_video" src="https://player.vimeo.com/video/<%= @video_show.link %>?title=0&amp;byline=0&amp;portrait=0" width="100%" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+					<% end %>
 				</div>
 				<div class="hide_in_mobile_view push_left">
 					<% @video_cats.each do |cat| %>
@@ -49,5 +51,20 @@
 	<% @video_cats.each do |cat| %>
 		<%= render "videos/anchor", title: cat.name.delete(" "), var: cat.videos.order("position ASC") , big_title: cat.name  %>
 	<% end %>
-	
+	<div class="container">
+		<div class="lightbox_thumb">
+			<div class="lightbox_carousel">
+				<% @videos.each do |video| %>
+					<div class="lightbox_video_size">
+						<%= link_to(image_tag(video.thumb_link), "", data: {featherlight: "#feather_box_#{video.link}" }, class: "lazyload") %>
+					</div>
+				<% end %>
+			</div>
+		 </div>
+	</div>
 </div>
+
+<script>
+var g = {items:4,pagination:false,responsive:{0:{items:2},990:{items:4}},loop:true,autoWidth:true,margin:10};
+	owlVideo($(".lightbox_carousel"), g);
+</script>

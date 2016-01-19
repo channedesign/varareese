@@ -12,7 +12,7 @@
 		/* dimensions: spanning the background from edge to edge */
 		position:fixed;
 		top: 0; right: 0; bottom: 0; left: 0;
-		z-index: 2147483647; /* z-index needs to be >= elements on the site. */
+		z-index: 9998; /* z-index needs to be >= elements on the site. */
 
 		/* position: centering content */
 		text-align: center;
@@ -72,10 +72,21 @@
 	}
 
 	.lightbox_thumb {
-		position: relative;
-		height: 30px;
-		width: 100px;
-		z-index: 9999;
+		position: fixed;
+		z-index: 999999;
+		bottom: 60px;
+		border: 1px solid rgba(255,255,255,0.3);
+		background-color: black;
+		width: 80%;
+		border-radius: 10px 10px 10px 10px;
+		-moz-border-radius: 10px 10px 10px 10px;
+		-webkit-border-radius: 10px 10px 10px 10px;
+		
+	}
+
+	.lightbox_video_size {
+		width: 200px;
+		height: 100px;
 	}
 
 	/* contains the content */
@@ -87,7 +98,7 @@
 	.featherlight .featherlight-close-icon {
 		/* position: centering vertical and horizontal */
 		position: absolute;
-		z-index: 9999;
+		z-index: 9998;
 		top: -13px;
 		right: -13px;
 
@@ -100,7 +111,7 @@
 		text-align: center;
 		font-family: Arial, sans-serif;
 		background: #fff; /* Set the background in case it overlaps the content */
-		background: rgba(250, 250, 250, 1);
+		background: rgba(255, 255, 255, 1);
 		border-radius: 100%;
 		-moz-border-radius: 100%;
 		-webkit-border-radius: 100%;

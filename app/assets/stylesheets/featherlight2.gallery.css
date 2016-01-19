@@ -10,9 +10,9 @@
 	.featherlight-previous {
 		display: block;
 		position: absolute;
-		top: 0px;
+		top: 20%;
 		right: -200px;
-		bottom: 0;
+		bottom: 20%;
 		left: 100%;
 		cursor: pointer;
 		/* preventing text selection */
@@ -33,7 +33,7 @@
 
 	.featherlight-next:hover,
 	.featherlight-previous:hover {
-		
+		background-color: rgba(255,255,255,0);
 	}
 
 

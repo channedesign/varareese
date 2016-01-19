@@ -3,6 +3,7 @@ class HomeController < ApplicationController
 
   def index
   	@contact_form = ContactForm.new
+  	@videos = Video.all
   	@video_cats = VideoCategory.order("position ASC")
   	@video_show = Video.where(name: "Reel").first
   	@photo_cats = PhotoCategory.order("position ASC")
