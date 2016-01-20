@@ -78,29 +78,12 @@ a:hover {
 	width: 50%;
 }
 
-.left_arrow_pic_div, .right_arrow_pic_div {
-	position: absolute;
-	width: 50px;
-	height: 100px;
-	z-index: 998;
-}
-
 .arrow_pic_div {
 	display: none;
 }
 
 .arrow_pic_div:hover {
 	background-color: rgba(250,250,250,0.5);
-}
-
-.left_arrow_pic_div {
-	top: 90px;
-	left: 0;
-}
-
-.right_arrow_pic_div {
-	top: 90px;
-	right: 0;
 }
 
 .arrow_pic {
@@ -366,7 +349,6 @@ a:hover {
 .view {
     width: 150px;
     height: 100px;
-    
     overflow: hidden;
     position: relative;
     text-align: center;
@@ -434,6 +416,23 @@ a:hover {
 	-moz-border-radius: 10px 10px 10px 10px;
 	-webkit-border-radius: 10px 10px; 
 	border: 0px solid black;
+}
+
+.left_arrow_pic_div, .right_arrow_pic_div {
+	position: absolute;
+	width: 50px;
+	height: 100px;
+	z-index: 998;
+}
+
+.left_arrow_pic_div {
+	top: 100px;
+	left: 0;
+}
+
+.right_arrow_pic_div {
+	top: 100px;
+	right: 0;
 }
 
 /*-----------------    VideoCategories/new   ------------------*/
@@ -572,6 +571,9 @@ footer {
 	.lightbox_thumb {
 		max-width: 60%;
 	}
+	.left_arrow_pic_div_photo, .right_arrow_pic_div_photo  {
+		top: 180px;
+	}
 }
 
 /*-----------------    1445    ------------------*/
@@ -588,6 +590,9 @@ footer {
 	}
 	.lightbox_thumb {
 		max-width: 80%;
+	}
+	.left_arrow_pic_div_photo, .right_arrow_pic_div_photo  {
+		top: 130px;
 	}
 }
 
@@ -619,11 +624,7 @@ footer {
     	font-size: 20px;
    		margin: 40px 0 0 0
 	}
-	.left_arrow_pic_div_photo {
-		top: 115px;
-	}
-
-	.right_arrow_pic_div_photo {
+	.left_arrow_pic_div_photo, .right_arrow_pic_div_photo  {
 		top: 115px;
 	}
 }

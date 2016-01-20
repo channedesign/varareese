@@ -47,7 +47,9 @@
 	</div>
 
 	<% @photo_cats.each do |cat| %>
-		<%= render "photos/anchor", title: cat.name.delete(" "), var: cat.photos , big_title: cat.name  %>
+		<% if cat.photos.present? %>
+			<%= render "photos/anchor", title: cat.name.delete(" "), var: cat.photos , big_title: cat.name  %>
+		<% end %>
 	<% end %>
 </div>
 	
