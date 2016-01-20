@@ -6,7 +6,6 @@ class ContactFormsController < ApplicationController
   end
 
   def create
-    
   	begin
   	@contact_form = ContactForm.new(params[:contact_form])
     @contact_form.request = request
