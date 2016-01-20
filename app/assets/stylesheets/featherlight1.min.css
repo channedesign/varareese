@@ -77,11 +77,9 @@
 		bottom: 60px;
 		border: 1px solid rgba(255,255,255,0.3);
 		background-color: black;
-		width: 80%;
 		border-radius: 10px 10px 10px 10px;
 		-moz-border-radius: 10px 10px 10px 10px;
 		-webkit-border-radius: 10px 10px 10px 10px;
-		
 	}
 
 	.lightbox_video_size {

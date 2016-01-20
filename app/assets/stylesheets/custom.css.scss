@@ -569,6 +569,9 @@ footer {
     	font-size: 20px;
    		margin: 60px 0 0 0
 	}
+	.lightbox_thumb {
+		max-width: 60%;
+	}
 }
 
 /*-----------------    1445    ------------------*/
@@ -582,6 +585,9 @@ footer {
 	}
 	.two_video_padding {
 		margin-left: -14%;
+	}
+	.lightbox_thumb {
+		max-width: 80%;
 	}
 }
 
