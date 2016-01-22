@@ -112,3 +112,10 @@
 		font-size: 40px;
 	}
 }
+
+@media (max-width: 767px) {
+	.featherlight_arrow {
+		height: 70px;
+		width: 20px;
+	}
+}
