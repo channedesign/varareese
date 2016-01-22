@@ -20,7 +20,7 @@
 				</div>
 				<% @photo_cats.each do |cat| %>
 					<div id="<%= cat.name.delete(" ") %>_photos" class="tab-pane fade">
-						<%= render("admins/tab_photo", var: cat.photos) %>
+						<%= render("admins/tab_photo", var: cat.photos.order("position ASC")) %>
 					</div>
 				<% end %>
 			</div>
