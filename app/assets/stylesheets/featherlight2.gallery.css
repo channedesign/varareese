@@ -97,13 +97,13 @@
 	.featherlight-next,
 	.featherlight-previous {
 		top: 10px;
-		right: 10px;
-		left: 85%;
+		right: -70px;
+		left: 95%;
 	}
 
 	.featherlight-previous {
-		left: 10px;
-		right: 85%;
+		left: -70px;
+		right: 95%;
 	}
 
 	.featherlight-next span,
