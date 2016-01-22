@@ -78,12 +78,12 @@ $(document).ready(function() {
 	
 
 	//Gallery Photo Custom Buttons
-	if ($(window).width > 767) {
+	if ($(window).width() > 767) {
 		hermitage.navigationButtons.next.styles = { width: '50px', height: '150px', backgroundImage: 'url(https://s3.amazonaws.com/varareesebucket/arrows/right_arrow_white.png)', backgroundSize: "cover",backgroundPosition: "right", top: "40%" };
 		hermitage.navigationButtons.previous.styles = { width: '50px', height: '150px', backgroundImage: 'url(https://s3.amazonaws.com/varareesebucket/arrows/left_arrow_white.png)', backgroundSize: "cover",backgroundPosition: "left", top: "40%" };
 	} else {
 		hermitage.navigationButtons.next.styles = { width: '20px', height: '70px', backgroundImage: 'url(https://s3.amazonaws.com/varareesebucket/arrows/right_arrow_white.png)', backgroundSize: "cover",backgroundPosition: "right", top: "45%" };
-	hermitage.navigationButtons.previous.styles = { width: '20px', height: '70px', backgroundImage: 'url(https://s3.amazonaws.com/varareesebucket/arrows/left_arrow_white.png)', backgroundSize: "cover",backgroundPosition: "left", top: "45%" };
+		hermitage.navigationButtons.previous.styles = { width: '20px', height: '70px', backgroundImage: 'url(https://s3.amazonaws.com/varareesebucket/arrows/left_arrow_white.png)', backgroundSize: "cover",backgroundPosition: "left", top: "45%" };
 	}
 	
 	hermitage.navigationButtons.next.text = "";
