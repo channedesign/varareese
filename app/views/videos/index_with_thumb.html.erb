@@ -53,6 +53,30 @@
 			<%= render "videos/anchor", title: cat.name.delete(" "), var: cat.videos.order("position ASC") , big_title: cat.name  %>
 		<% end %>
 	<% end %>
+	<div class="container">
+		<div class="lightbox_thumb">
+			<div class="lightbox_carousel">
+				<% @videos.each do |video| %>
+					<div class="lightbox_video_size">
+						<%= link_to(image_tag(video.thumb_link), "", data: {featherlight: "#feather_box_#{video.link}" }, class: "lazyload gallery") %>
+					</div>
+				<% end %>
+			</div>
+			<div class="left_arrow_pic_div_thumb arrow_pic_div left_arrow_thumb">
+				<%= image_tag("left_arrow_white.png", class: "arrow_pic", id: "left_arrow_pic") %>
+			</div>
+			<div class="right_arrow_pic_div_thumb arrow_pic_div right_arrow_thumb">
+				<%= image_tag("right_arrow_white.png", class: "arrow_pic", id: "right_arrow_pic") %>
+			</div>
+		 </div>
+	</div>
 </div>
 
-
+<script>
+var g = {items:4,pagination:false,responsive:{0:{items:2},992:{items:4}},loop:true,autoWidth:true,margin:10};
+	owlVideo($(".lightbox_carousel"), g);
+	if ($(window).width() > 992 ) {
+		arrow(".left_arrow_thumb", $(".lightbox_carousel"), ".right_arrow_thumb");
+		
+	}
+</script>

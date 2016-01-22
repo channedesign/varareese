@@ -71,7 +71,42 @@
 		white-space: normal;
 	}
 
-	
+	.lightbox_thumb {
+		position: fixed;
+		z-index: 999999;
+		bottom: 60px;
+		border: 0px solid rgba(255,255,255,0.3);
+		background-color: black;
+		border-radius: 10px 10px 10px 10px;
+		-moz-border-radius: 10px 10px 10px 10px;
+		-webkit-border-radius: 10px 10px 10px 10px;
+	}
+
+	.lightbox_thumb .arrow_pic_div:hover {
+		background-color: rgba(255,255,255,0.2);
+	}
+
+	.lightbox_video_size {
+		width: 200px;
+		height: 100px;
+	}
+
+	.left_arrow_pic_div_thumb, .right_arrow_pic_div_thumb {
+		position: absolute;
+		height: 70px;
+		z-index: 998;
+		display: block;
+	}
+
+	.left_arrow_pic_div_thumb {
+		top: 15px;
+		left: -30px;
+	}
+
+	.right_arrow_pic_div_thumb {
+		top: 15px;
+		right: -30px;
+	}
 
 	/* contains the content */
 	.featherlight .featherlight-inner {

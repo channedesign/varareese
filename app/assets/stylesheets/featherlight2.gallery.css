@@ -10,9 +10,9 @@
 	.featherlight-previous {
 		display: block;
 		position: absolute;
-		top: 20%;
+		top: 10%;
 		right: -200px;
-		bottom: 20%;
+		bottom: 30%;
 		left: 100%;
 		cursor: pointer;
 		/* preventing text selection */
@@ -36,12 +36,16 @@
 		background-color: rgba(255,255,255,0);
 	}
 
+	.featherlight_arrow {
+		height: 150px;
+		width: 50px;
+	}
+
 
 	.featherlight-next span,
 	.featherlight-previous span {
 		display: none;
 		position: absolute;
-
 		top: 50%;
 		left: 5%;
 		width: 82%;
