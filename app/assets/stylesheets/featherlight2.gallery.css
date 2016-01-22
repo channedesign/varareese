@@ -118,4 +118,9 @@
 		height: 70px;
 		width: 20px;
 	}
+	.featherlight-next,
+	.featherlight-previous {
+		top: 25px;
+		
+	}
 }
