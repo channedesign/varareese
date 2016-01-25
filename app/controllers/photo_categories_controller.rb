@@ -38,6 +38,6 @@ class PhotoCategoriesController < ApplicationController
 
 	private
 		def photo_category_params
-			params.require(:photo_category).permit(:name, :position, :image)
+			params.require(:photo_category).permit(:name, :position, :image, :image_original_w, :image_original_h, :image_box_w, :image_crop_x, :image_crop_y, :image_crop_w, :image_crop_h, :image_aspect)
 		end
 end

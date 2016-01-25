@@ -5,8 +5,9 @@
         <div class="well col-md-8 col-md-offset-2 marginTopMin">
             <%= simple_form_for(@photo, html: {multipart: true}) do |f| %>
             <%= f.input :name, placeholder: "Name" %>
-            
-            
+            <% if @photo.name == "Reel" %>
+                <%= f.input :intro_text, as: :text, error: "The Reel needs an intro text" %>
+            <% end %>
             <div class="photo">
                 <div><%= f.label :photo %></div>
                 <% if @photo.photo.present? %>

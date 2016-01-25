@@ -183,7 +183,7 @@ a:hover {
 
 .dropzone {
 	margin-top: 50px;
-	height: 500px;
+	min-height: 500px;
 	border-radius: 10px 10px 10px 10px;
 	-moz-border-radius: 10px 10px 10px 10px;
 	-webkit-border-radius: 10px 10px 10px 10px;
@@ -458,8 +458,6 @@ tr.found{
 
 .vara_small_pic {
 	width: 100%;
-	/*-webkit-clip-path: inset(0 0 29% 0);
-	clip-path: inset(0 0 29% 0);*/
 }
 
 .vara_small_photo_div {

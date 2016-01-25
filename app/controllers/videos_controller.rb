@@ -4,7 +4,6 @@ class VideosController < ApplicationController
   def index
     @videos = Video.order("position ASC")
     @video_show = Video.where(name: "Reel").first
-    
   end
 
   def new
@@ -45,7 +44,7 @@ class VideosController < ApplicationController
 
   private
     def video_params
-      params.require(:video).permit(:name, :link, {video_category_ids: []}, :mag, :mag_link, :position)
+      params.require(:video).permit(:name, :link, {video_category_ids: []}, :mag, :mag_link, :position, :intro_text)
     end
 
 end

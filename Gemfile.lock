@@ -86,6 +86,8 @@ GEM
       coffee-rails
       jquery-rails
       rails (>= 3.2)
+    heroku-deflater (0.6.2)
+      rack (>= 1.4.5)
     i18n (0.7.0)
     jbuilder (2.3.2)
       activesupport (>= 3.0.0, < 5)
@@ -113,12 +115,16 @@ GEM
     nokogiri (1.6.7)
       mini_portile2 (~> 2.0.0.rc2)
     orm_adapter (0.5.0)
+    os (0.9.6)
     paperclip (4.3.1)
       activemodel (>= 3.2.0)
       activesupport (>= 3.2.0)
       cocaine (~> 0.5.5)
       mime-types
       mimemagic (= 0.3.0)
+    paperclip-compression (0.3.13)
+      os (~> 0.9.6)
+      paperclip (>= 4.3.0)
     papercrop (0.3.0)
       jquery-rails
       paperclip (>= 3.4)
@@ -209,11 +215,13 @@ DEPENDENCIES
   font-awesome-rails
   foreman
   hermitage
+  heroku-deflater
   jbuilder (~> 2.0)
   jquery-rails
   jquery-turbolinks
   mail_form
   paperclip
+  paperclip-compression
   papercrop
   passenger
   pg
