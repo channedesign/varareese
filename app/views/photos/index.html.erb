@@ -1,9 +1,10 @@
 <%= javascript_tag "function owlPhoto(x) {
 		x.owlCarousel({
 			autoplay: 3000,
-			items: 5,
+			items: 4,
 			pagination: false,
 			loop: true,
+			slideBy:4,
 			autoplayHoverPause: true,
 			responsive: {
 				0: {
@@ -13,7 +14,7 @@
 					items: 4
 				},
 				990: {
-					items: 5
+					items: 4
 				}
 			}
 		});

@@ -1,17 +1,25 @@
 
 <%= link_to((fa_icon 'arrow-left') + "      Manage Photo", admins_photo_path , class: "btn btn-default") %>
 	<div class="row marginTop">
-		<div class="col-md-6 col-md-offset-3">
+		<div class="col-md-8 col-md-offset-2">
 			<%= simple_form_for(@photo_cat, html: {multipart: true}) do |f| %>
 			<%= f.input :name %>
 			<%= f.input :position, collection: 1..@photo_cats.length %>
 			<% if @photo_cat.image.present? %>
-				<%= image_tag(@photo_cat.image, class: "video_category_image") %>
-				<%= f.cropbox :image, width: 400 %>
-  				<%= f.crop_preview :image, width: 200 %>
+				<div class="col-md-12">
+					<%= image_tag(@photo_cat.image, class: "video_category_image") %>
+				</div>
+				<div class="row">
+					<div class="col-md-8 marginTopMin">
+						<%= f.cropbox :image, width: 400 %>
+					</div>
+					<div class="col-md-4 marginTopMin">
+	  					<%= f.crop_preview :image, width: 200 %>
+	  				</div>
+	  			</div>
 			<% end %>
 			<%= f.file_field :image, accept: "image/jpeg, image/gif, image/png" %>
-			<%= f.submit(@photo_cat.new_record? ? "Add New Category" : "Edit Category", class: "btn btn-default" )  %>
+			<%= f.submit(@photo_cat.new_record? ? "Add New Category" : "Finish Cropping", class: "btn btn-default" )  %>
 			<% end %>
 		</div>
 	</div>
