@@ -216,15 +216,11 @@ a:hover {
 @media (min-aspect-ratio: 16/9) {
   .video_background iframe {
     height: 200%; top: -50%;
-    /* or height: 200%; top: -50%;
-       or height: 400%; top: -150%; */
   }
 }
 @media (max-aspect-ratio: 16/9) {
   .video_background iframe  {
     width: 200%; left: -50%;
-    /* or width: 200%; left: -50%;
-       or width: 400%; left: -150%; */
   }
 }
 
@@ -248,21 +244,6 @@ a:hover {
 	margin: 20px;
 	font-size: 1.5em;
 }
-
-/*.vara_logo_home {
-	width: 500px;
-	height: 500px;
-	border-radius: 50%;
-	position: relative;
-	top: 20%;
-	background-color: rgba(200,200,200,0.5);
-	color: black;
-}
-
-.vara_logo_title {
-	position: relative;
-	top: 40px;
-}*/
 
 .vara_logo_home {
 	width: 100%;
@@ -530,13 +511,49 @@ footer {
 /*---------------------------------------------------*/
 /*---------------------------------------------------*/
 
+/*-----------------    2880    -----------------*/
 
-/*-----------------    1920    ------------------*/
+@media (max-width: 2880px) {
+	.video_background ul {
+		left: 39%;
+	}
+	.two_video_padding {
+		margin-left: -10%;
+	}
+	.push_left {
+		margin-left: 4%;
+	}
+	.video_category_image_index {
+		width: 300px;
+		height: 170px;
+	}	
+	.view {
+    	width: 300px;
+    	height: 170px;
+  	}
+	.view .mask, .view .content {
+    	width: 300px;
+    	height: 170px;
+	}
+	.view h2 {
+    	font-size: 20px;
+   		margin: 60px 0 0 0
+	}
+	.lightbox_thumb {
+		max-width: 60%;
+	}
+	.left_arrow_pic_div_photo, .right_arrow_pic_div_photo  {
+		top: 180px;
+	}
+}
 
-@media (max-width: 1920px) {
-	/*.vara_logo_home {
-		left: 37%;
-	}*/
+
+/*-----------------    2560    -----------------*/
+
+
+/*-----------------    1950    ------------------*/
+
+@media (max-width: 1950px) {
 	.video_background ul {
 		left: 39%;
 	}
@@ -573,9 +590,6 @@ footer {
 /*-----------------    1445    ------------------*/
 
 @media (max-width: 1445px) {
-	/*.vara_logo_home {
-		left: 33%;
-	}*/
 	.video_background ul {
 		left: 35%;
 	}
@@ -593,9 +607,6 @@ footer {
 /*-----------------    1200    ------------------*/
 
 @media (max-width: 1200px) {
-	/*.vara_logo_home {
-		left: 30%;
-	}*/
 	.video_background ul {
 		left: 32%;
 	}
@@ -626,9 +637,6 @@ footer {
 /*-----------------    1100    ------------------*/
 
 @media (max-width: 1100px) {
-	/*.vara_logo_home {
-		left: 28%;
-	}*/
 	.video_background ul {
 		left: 30%;
 	}
@@ -686,12 +694,6 @@ footer {
 	.exo_container_video {
 		background-attachment: scroll;
 	}
-	/*.vara_logo_home {
-		left:25%;
-	}
-	.vara_logo_title {
-		font-size: 0.8em;
-	}*/
 	.video_category_image_index {
 		width: 120px;
 		height: 80px;
@@ -727,16 +729,6 @@ footer {
 	.exo_container_video {
 		background-attachment: scroll;
 	}
-	/*.vara_logo_home {
-		width: 400px;
-		height: 400px;
-		position: absolute;
-		top: 25%;
-		left:30%;
-	}
-	.vara_logo_title {
-		font-size: 0.8em;
-	}*/
 	.video_category_image_index {
 		width: 120px;
 		height: 80px;
@@ -769,16 +761,6 @@ footer {
 	.exo_container_video {
 		background-attachment: scroll;
 	}
-	/*.vara_logo_home {
-		width: 400px;
-		height: 400px;
-		position: absolute;
-		top: 25%;
-		left:30%;
-	}
-	.vara_logo_title {
-		font-size: 0.8em;
-	}*/
 	.video_category_image_index {
 		width: 120px;
 		height: 80px;
@@ -821,16 +803,6 @@ footer {
 	.exo_container_video {
 		background-attachment: scroll;
 	}
-	/*.vara_logo_home {
-		width: 400px;
-		height: 400px;
-		position: absolute;
-		top: 25%;
-		left:30%;
-	}
-	.vara_logo_title {
-		font-size: 0.8em;
-	}*/
 	.two_video_padding {
 		margin-left: 0;
 	}
@@ -845,14 +817,6 @@ footer {
 /*-----------------    768    ------------------*/
 
 @media (max-width: 768px) {
-	/*.vara_logo_home {
-		width: 350px;
-		height: 350px;
-		left: 27%;
-	}
-	.vara_logo_title {
-		font-size: 0.7em;
-	}*/
 	.navbar-default .navbar-nav > .active > a, 
  		.navbar-default .navbar-nav > .active > a:hover, 
  		.navbar-default .navbar-nav > .active > a:focus {
@@ -864,36 +828,9 @@ footer {
 	}
 }
 
-/*-----------------    736    ------------------*/
-
-/* Landscape */
-@media only screen 
-  and (min-device-width: 320px) 
-  and (max-device-width: 736px) 
-  and (-webkit-min-device-pixel-ratio: 2)
-  and (orientation: landscape) { 
-  	/*.vara_logo_home {
-		width: 300px;
-		height: 300px;
-		top: 10%;
-		left: 30%;
-	}
-	.vara_logo_title {
-		font-size: 0.5em;
-	}*/
-}
-
 /*-----------------    650    ------------------*/
 
 @media (max-width: 650px) {
-	/*.vara_logo_home {
-		width: 300px;
-		height: 300px;
-		left:25%;
-	}
-	.vara_logo_title {
-		font-size: 0.5em;
-	}*/
 	.vara_logo_home {
 		height: 285px;
 		top: 30%;
@@ -930,9 +867,6 @@ footer {
 /*-----------------    415    ------------------*/
 
 @media (max-width: 415px) {
-	/*.vara_logo_home {
-		left:10%;
-	}*/
 	.vara_logo_title {
 		position: relative;
 		top: 10px;
@@ -972,16 +906,9 @@ footer {
 /*-----------------    330    ------------------*/
 
 @media (max-width: 330px) {
-	/*.vara_logo_home {
-		left:3%;
-	}
-	.big_video {
-		height: 150px;
-	}*/
 	.video_size {
 		margin-left: 5px;
 	}
-
 	.vara_logo_title h1 {
 		font-size: 5em;
 	} 
