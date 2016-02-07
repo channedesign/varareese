@@ -1,8 +1,9 @@
 class VideosController < ApplicationController
   before_action :authenticate_admin!
+  before_action :videos_order, except: [:new, :destroy]
+  before_action :video_with_id, only: [:edit, :update]
 
   def index
-    @videos = Video.order("position ASC")
     @video_show = Video.where(name: "Reel").first
   end
 
@@ -12,8 +13,6 @@ class VideosController < ApplicationController
 
   def create
     @video = Video.new(video_params)
-    @videos = Video.order("position ASC")
-    
     if @video.save
       redirect_to admins_video_path, notice: "Video uploaded successfully"
     else
@@ -22,14 +21,9 @@ class VideosController < ApplicationController
   end
 
   def edit
-    @video = Video.find(params[:id])
-    @videos = Video.order("position ASC")
   end
 
   def update
-    @video = Video.find(params[:id])
-    @videos = Video.order("position ASC")
-
     if @video.update_attributes(video_params)
       redirect_to admins_video_path, notice: "Video edited successfully"
     else
@@ -45,6 +39,14 @@ class VideosController < ApplicationController
   private
     def video_params
       params.require(:video).permit(:name, :link, {video_category_ids: []}, :mag, :mag_link, :position, :intro_text)
+    end
+
+    def videos_order
+      @videos = Video.order("position ASC")
+    end
+
+    def video_with_id
+      @video = Video.find(params[:id])
     end
 
 end

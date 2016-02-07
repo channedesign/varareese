@@ -1,7 +1,8 @@
 class PhotosController < ApplicationController
   before_action :authenticate_admin!
+  before_action :photo_all, only: [:index, :edit]
+  before_action :photo_with_id, only: [:edit, :update]
   def index
-    @photos = Photo.all
     @photo_show = Photo.where(name: "Reel").first
   end
 
@@ -23,12 +24,9 @@ class PhotosController < ApplicationController
   end
 
   def edit
-    @photo = Photo.find(params[:id])
-    @photos = Photo.all
   end
 
   def update
-    @photo = Photo.find(params[:id])
 
     if @photo.update_attributes(photo_params)
       flash[:notice] = "Photo edited successfully"
@@ -48,6 +46,14 @@ class PhotosController < ApplicationController
   private
     def photo_params
       params.require(:photo).permit(:name, :photo, {photo_category_ids: []}, :photo_original_w, :photo_original_h, :photo_box_w, :photo_crop_x, :photo_crop_y, :photo_crop_w, :photo_crop_h, :photo_aspect, :intro_text) 
+    end
+
+    def photo_all
+      @photos = Photo.all
+    end
+
+    def photo_with_id
+      @photo = Photo.find(params[:id])
     end
 
 end
