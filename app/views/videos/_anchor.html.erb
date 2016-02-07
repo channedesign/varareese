@@ -17,14 +17,7 @@
 		</iframe>
 			
 		
-		<script>
-		$(document).ready(function() {
-			var lightBox = $("#feather_box_<%= video.link %>");
-			$(".video_img_thumb_<%= video.link %>").hover(function() {
-				lightBox.attr("src", lightBox.data("src"));
-			});
-		});
-		</script>
+		
 	<% end %>
 
 	<% if var.length >= 4 %>
