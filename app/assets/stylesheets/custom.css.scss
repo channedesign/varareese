@@ -829,17 +829,7 @@ footer {
 /*-----------------    650    ------------------*/
 
 @media (max-width: 650px) {
-	.vara_logo_home {
-		height: 285px;
-		top: 30%;
-	}
-	.vara_logo_title {
-		position: relative;
-		top: 50px;
-	} 
-	.vara_logo_title h1 {
-		font-size: 6em;
-	} 
+	
 	.big_video {
 		height: 320px;
 	}
@@ -865,10 +855,7 @@ footer {
 /*-----------------    415    ------------------*/
 
 @media (max-width: 415px) {
-	.vara_logo_title {
-		position: relative;
-		top: 10px;
-	}
+	
 	.big_video {
 		height: 200px;
 	}
@@ -907,9 +894,7 @@ footer {
 	.video_size {
 		margin-left: 5px;
 	}
-	.vara_logo_title h1 {
-		font-size: 5em;
-	} 
+	
 }
 
 
