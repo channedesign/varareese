@@ -247,23 +247,17 @@ a:hover {
 
 .vara_logo_home {
 	width: 100%;
-	height: 365px;
+	height: 40%;
 	position: absolute;
 	top: 25%;
 	background-color: rgba(200,200,200,0.5);
 	color: black;
 }
 
-.vara_logo_title {
-	position: relative;
-	top: 80px;
-} 
-
-.vara_logo_title h1 {
-	font-size: 8em;
-} 
-
 .vara_logo_pic {
+	position: absolute;
+	top: 15%;
+	right: 16%;
 	width: 70%;
 }
 
