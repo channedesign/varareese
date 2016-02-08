@@ -810,6 +810,12 @@ footer {
 	.hide_in_mobile_view {
 		display: none;
 	}
+	.vara_logo_pic {
+		position: absolute;
+		top: 20%;
+		right: 0%;
+		width: 100%;
+	}
 }
 
 /*-----------------    768    ------------------*/
@@ -823,6 +829,10 @@ footer {
 	.box_dimension {
 		width: 450px;
 		height: 250px;
+	}
+	.vara_logo_home {
+		top: 35%;
+		height: 30%;
 	}
 }
 
@@ -849,6 +859,9 @@ footer {
 	    font-size: 9px;
 	    padding: 8px;
 	    margin: 20px 0 0 0
+	}
+	.vara_logo_home {
+		height: 25%;
 	}	
 }
 
@@ -886,6 +899,10 @@ footer {
 	.transition {
 		height: 100px;
 	}
+	.vara_logo_home {
+		top: 40%;
+		height: 20%;
+	}
 }
 
 /*-----------------    330    ------------------*/
@@ -895,6 +912,7 @@ footer {
 		margin-left: 5px;
 	}
 	
+
 }
 
 
