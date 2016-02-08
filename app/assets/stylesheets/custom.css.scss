@@ -122,6 +122,12 @@ a:hover {
     background-color: #212121;
  }
 
+ .small_mobile_logo {
+ 	width: 50px;
+ 	margin-left: 3%;
+ 	display: none;
+ }
+
 /*-----------------    Admin/General    ------------------*/
 
 .nav-tabs > li > a:hover{
@@ -848,6 +854,9 @@ footer {
 		top: 35%;
 		height: 30%;
 	}
+	 .small_mobile_logo {
+	 	display: block;
+	 }
 }
 
 /*-----------------    650    ------------------*/
