@@ -436,7 +436,8 @@ tr.found{
 }
 
 .vara_small_pic {
-	width: 100%;
+	max-width: 215px;
+	max-height: 215px;
 }
 
 .vara_small_photo_div {
@@ -489,7 +490,14 @@ tr.found{
 	background-image: image-url("VaraContact.jpg");
 	background-size: cover;
 	background-attachment: fixed;
-	
+}
+
+.mobile_transition {
+	display: none;
+}
+
+.contact_mobile_pic {
+	width: 100%;
 }
 
 /*-----------------    footer    ------------------*/
@@ -541,7 +549,7 @@ footer {
 		max-width: 60%;
 	}
 	.left_arrow_pic_div_photo, .right_arrow_pic_div_photo  {
-		top: 180px;
+		top: 30%;
 	}
 }
 
@@ -581,7 +589,7 @@ footer {
 		max-width: 60%;
 	}
 	.left_arrow_pic_div_photo, .right_arrow_pic_div_photo  {
-		top: 180px;
+		top: 45%;
 	}
 }
 
@@ -596,9 +604,6 @@ footer {
 	}
 	.lightbox_thumb {
 		max-width: 80%;
-	}
-	.left_arrow_pic_div_photo, .right_arrow_pic_div_photo  {
-		top: 130px;
 	}
 }
 
@@ -626,9 +631,6 @@ footer {
 	.view h2 {
     	font-size: 20px;
    		margin: 40px 0 0 0
-	}
-	.left_arrow_pic_div_photo, .right_arrow_pic_div_photo  {
-		top: 115px;
 	}
 }
 
@@ -699,6 +701,9 @@ footer {
 	.hide_in_mobile_view {
 		display: none;
 	}
+	.mobile_transition {
+		display: block;
+	}
   }
 
 /*-----------------    1050/Landscape    ------------------*/
@@ -734,6 +739,9 @@ footer {
 	.hide_in_mobile_view {
 		display: none;
 	}
+	.mobile_transition {
+		display: block;
+	}
 }
 
 @media only screen 
@@ -765,6 +773,9 @@ footer {
 	}
 	.hide_in_mobile_view {
 		display: none;
+	}
+	.mobile_transition {
+		display: block;
 	}
 }
 
@@ -809,6 +820,9 @@ footer {
 	}
 	.hide_in_mobile_view {
 		display: none;
+	}
+	.mobile_transition {
+		display: block;
 	}
 	.vara_logo_pic {
 		position: absolute;
@@ -899,7 +913,6 @@ footer {
 	.transition {
 		height: 100px;
 	}
-
 	.vara_logo_pic {
 		top: 28%;
 	}
@@ -911,8 +924,6 @@ footer {
 	.video_size {
 		margin-left: 5px;
 	}
-	
-
 }
 
 
