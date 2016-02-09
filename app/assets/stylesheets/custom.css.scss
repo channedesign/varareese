@@ -242,15 +242,8 @@ a:hover {
 	position: relative;
 	top: 0;
 	height: 60px;
-	width: 450px;
-	border-radius: 0px 0px 10px 10px;
-	-moz-border-radius: 0px 0px 10px 10px;
-	-webkit-border-radius: 0px 0px 10px 10px;
-	border: 0px solid #000000;
-	background-color: rgba(0, 0, 0, 0.4);
+
 }
-
-
 
 .video_background li {
 	list-style-type: none;
@@ -258,6 +251,14 @@ a:hover {
 	float: left;
 	margin: 15px 20px 20px 20px;
 	font-size: 1.5em;
+}
+
+.video_background li a {
+	color: rgba(100,100,100,0.9);
+}
+
+.video_background li a:hover {
+	color: rgba(0, 0, 0, 1);
 }
 
 .vara_logo_home {
