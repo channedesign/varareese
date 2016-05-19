@@ -1,18 +1,18 @@
 <%= simple_form_for @video do |f| %>
-<%= f.input :name, label: "Title", placeholder: "Title" %>
-<%= f.input :mag, label: "Magazine Name", placeholder: "Magazine Name" %>
-<%= f.input :mag_link, label: "Magazine Link", placeholder: "e.g. 'http://www.example.com'" %>
-<%= f.input :link, label: "Video Link", placeholder: "e.g. '34969454'" %>
-<%= f.label :video_categories, label: "Video Categories" %>
-<%= f.association :video_categories, label: false, as: :check_boxes, label_method: :name, item_wrapper_class: "inline" %>
-<%= f.input :position, collection: 1..@videos.length %>
-<% if @video.link.present? %>
-	<iframe class="lazyload" data-src="https://player.vimeo.com/video/<%= @video.link %>" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
-	<br />
-<% end %>
-<% if @video.name.present? && @video.name == "Reel" %>
-	<%= f.input :intro_text, as: :text, error: "The Reel needs an intro text" %>
-<% end %>
-<%= f.submit(@video.new_record? ? "Add Video" : "Edit Video", class: "btn btn-success") %>
+	<%= f.input :name, label: "Title", placeholder: "Title" %>
+	<%= f.input :mag, label: "Magazine Name", placeholder: "Magazine Name" %>
+	<%= f.input :mag_link, label: "Magazine Link", placeholder: "e.g. 'http://www.example.com'" %>
+	<%= f.input :link, label: "Video Link", placeholder: "e.g. '34969454'" %>
+	<%= f.label :video_categories, label: "Video Categories" %>
+	<%= f.association :video_categories, label: false, as: :check_boxes, label_method: :name, item_wrapper_class: "inline" %>
+	<%= f.input :position, collection: 1..@videos.length %>
+	<% if @video.link.present? %>
+		<iframe class="lazyload" data-src="https://player.vimeo.com/video/<%= @video.link %>" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+		<br />
+	<% end %>
+	<% if @video.name.present? && @video.name == "Reel" %>
+		<%= f.input :intro_text, as: :text, error: "The Reel needs an intro text" %>
+	<% end %>
+	<%= f.submit(@video.new_record? ? "Add Video" : "Edit Video", class: "btn btn-success") %>
 <% end %>
 

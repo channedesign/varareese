@@ -46,6 +46,9 @@ gem 'acts_as_list'
 gem "passenger"
 gem "papercrop"
 gem 'paperclip-compression'
+gem 'angularjs-rails'
+gem 'angular-rails-templates'
+gem 'responders', '~> 2.0'
 
 
 

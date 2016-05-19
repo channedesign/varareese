@@ -5,7 +5,6 @@ class Video < ActiveRecord::Base
 	acts_as_list
 	validates :link, presence: { message: "A link is required!" }, uniqueness: { message: "Video has already been uploaded!" }
 	
-	
 	private 
 		def thumb
 			link =  self.link

@@ -18,4 +18,6 @@
 //= require jquery.jcrop
 //= require papercrop
 //= require turbolinks
+//= require angular
+//= require angular-rails-templates
 //= require_tree .
