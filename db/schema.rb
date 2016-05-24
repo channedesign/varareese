@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160125141124) do
+ActiveRecord::Schema.define(version: 20160523190613) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -80,13 +80,6 @@ ActiveRecord::Schema.define(version: 20160125141124) do
     t.datetime "image_updated_at"
   end
 
-  create_table "video_categories_videos", id: false, force: :cascade do |t|
-    t.integer  "video_category_id"
-    t.integer  "video_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
   create_table "videos", force: :cascade do |t|
     t.string   "name"
     t.string   "link"
@@ -97,6 +90,9 @@ ActiveRecord::Schema.define(version: 20160125141124) do
     t.integer  "position"
     t.string   "thumb_link"
     t.string   "intro_text"
+    t.integer  "video_category_id"
   end
+
+  add_index "videos", ["video_category_id"], name: "index_videos_on_video_category_id", using: :btree
 
 end

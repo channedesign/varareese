@@ -2,6 +2,12 @@ class VideoCategoriesController < ApplicationController
 	before_action :authenticate_admin!
 	before_action :video_cats_order, except: [:destroy, :update]
 	before_action :video_cats_id, only: [:edit, :update]
+
+	respond_to :json
+
+	def index
+	end
+
 	def new
 		@video_cat = VideoCategory.new
 	end
@@ -38,7 +44,8 @@ class VideoCategoriesController < ApplicationController
 		end
 
 		def video_cats_order
-			@video_cats = VideoCategory.order("position ASC")
+			# @video_cats = VideoCategory.order("position ASC")
+			respond_with VideoCategory.order("position ASC")
 		end
 
 		def video_cats_id

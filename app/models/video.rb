@@ -1,6 +1,6 @@
 class Video < ActiveRecord::Base
 	before_validation :thumb
-	has_and_belongs_to_many :video_categories
+	belongs_to :video_categories
 
 	acts_as_list
 	validates :link, presence: { message: "A link is required!" }, uniqueness: { message: "Video has already been uploaded!" }

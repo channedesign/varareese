@@ -8,9 +8,9 @@ Rails.application.routes.draw do
   get "admins/profile"
 
   resources :photos, except: [:show]
-  resources :video_categories, except: [:index, :show]
-  resources :photo_categories, except: [:index, :show]
+  resources :video_categories, except: [:show]
   resources :videos, except: [:show]
+  resources :photo_categories, except: [:index, :show]
   devise_for :admins
   resources :contact_forms, only: [:new, :create]
   

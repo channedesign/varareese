@@ -1,0 +1,51 @@
+<div class="row">
+	<div class="col-sm-6 col-sm-offset-3 add_div" ng-click="showForm=true" ng-hide="showForm">
+		<i class="fa fa-plus fa-5x" aria-hidden="true"></i>
+		<h3>Upload a new video</h3>
+	</div>
+	<div class="col-sm-6 col-sm-offset-3">
+		<form novalidate role="form" ng-show="showForm" ng-submit="addVideo()">
+		  <div class="form-group">
+		    <label for="name">Title:</label>
+		    <input type="text" class="form-control" id="name" placeholder="Title" ng-model="newVideo.name">
+		  </div>
+		  <div class="form-group">
+		    <label for="magazine">Magazine Name:</label>
+		    <input type="text" class="form-control" id="magazine" placeholder="Magazine Name" ng-model="newVideo.mag">
+		  </div>
+		  <div class="form-group">
+		    <label for="magazine_link">Magazine Link:</label>
+		    <input type="url" class="form-control" id="magazine_link" placeholder="e.g. 'http://www.example.com'" ng-model="newVideo.mag_link">
+		  </div>
+		  <div class="form-group">
+		    <label for="link">Video Link:</label>
+		    <input type="text" class="form-control" id="link" placeholder="e.g. '34969454'" ng-model="newVideo.link">
+		  </div>
+		  <label ng-repeat="videoCat in videosCat" class="checkbox-inline"><input type="checkbox" value="" ng-model="videoCat.newVideo.video_category_id">{{videoCat.name}}</label>
+		  <br>
+		  <button type="submit" class="btn btn-default">Submit</button>
+		  <a href="" ng-click="showForm=false">Cancel</a>
+		</form>
+	</div>
+</div>
+<ul class="nav nav-tabs">
+  <li class="active"><a data-toggle="tab" href="" ng-click="selectTab(1)">All</a></li>
+  <li ng-repeat="videoCat in videosCat"><a data-toggle="tab" href="" ng-click="selectTab(videoCat.name)">{{videoCat.name}}</a></li>
+</ul>
+<div class="tab-content">
+  <div class="tab-pane fade in active" ng-show="tab===1">
+    <div class="col-sm-3 mini_thumb_div" ng-repeat="video in videos">
+			<img ng-src="{{video.thumb_link}}"/>
+			<br>
+			<a ng-href="#/videos/{{video.id}}/edit">Edit</a> |
+			<a href="" ng-click="deleteVideo($index)">Delete</a>
+		</div>
+  </div>
+  <div class="tab-pane fade in active" ng-repeat="videoCat in videosCat" ng-show="tab===videoCat.name">
+  	<div class="col-sm-3 mini_thumb_div" ng-repeat="video in videos" ng-show="video.video_category_id===videoCat.id">
+   		<img ng-src="{{video.thumb_link}}"/>
+   	</div>
+  </div>
+</div>
+
+

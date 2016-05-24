@@ -1,21 +1,4 @@
 <%= render template: "shared/admins_header" %>
-<div class="container center">
-	<div class="row">
-		<div class="col-md-6 col-md-offset-3">
-			<h1>Welcome Vara</h1>
-			<h3>Content Management System</h3>
-		</div>
-		<div class="col-md-6 col-md-offset-3 marginTopMin">
-			<h2>Profile</h2>
-			<%= link_to((fa_icon "female 5x", class: "manage_icon"), edit_admin_registration_path) %>
-		</div>
-		<div class="col-md-6">
-			<h2>Manage Videos</h2>
-			<%= link_to((fa_icon "video-camera 5x", class: "manage_icon"), admins_video_path) %>
-		</div>
-		<div class="col-md-6">
-			<h2>Manage Photos</h2>
-			<%= link_to((fa_icon "camera-retro 5x", class: "manage_icon"), admins_photo_path) %>
-		</div>
-	</div>
+<div class="container center" ng-app="VaraApp">
+	<div ng-view></div>
 </div>

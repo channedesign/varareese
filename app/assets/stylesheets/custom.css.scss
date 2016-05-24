@@ -166,14 +166,22 @@ a:hover {
 
 /*-----------------    Admin/Video    ------------------*/
 
-.mini_thumb_div iframe {
-	width: 100px;
-	height: 70px;
+.mini_thumb_div img {
+	width: 200px;
+	height: 120px;
 }
 
 .inline {
 	margin: 20px;
 	display: inline;
+}
+
+.add_div {
+	border: 1px solid white;
+	border-radius: 10px 10px 10px 10px;
+	-moz-border-radius: 10px 10px 10px 10px;
+	-webkit-border-radius: 10px 10px 10px 10px;
+	padding: 10px;
 }
 
 /*-----------------    Admin/Photo    ------------------*/
@@ -521,10 +529,10 @@ tr.found{
 }
 
 .contact_imdb_icon {
-	width: 24px;
+	width: 23.5px;
 	position: relative;
-	top: -8px;
-	left: 1px;
+	top: -7px;
+	left: 3px;
 }
 
 .hidden_icon {
