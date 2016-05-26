@@ -516,6 +516,32 @@ tr.found{
 	width: 100%;
 }
 
+.contact_social_icon {
+	margin: 3px;
+	color: white;
+}
+
+.contact_imdb_icon {
+	width: 24px;
+	position: relative;
+	top: -8px;
+	left: 1px;
+}
+
+.hidden_icon {
+	display: none;
+}
+
+.imdb_icons_div:hover {
+	.contact_imdb_icon {
+		display: none;
+	}
+	.hidden_icon {
+		display: inline;
+	}
+	
+}
+
 /*-----------------    footer    ------------------*/
 
 footer {
