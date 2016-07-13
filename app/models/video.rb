@@ -1,4 +1,5 @@
 class Video < ActiveRecord::Base
+	extend CommonScopes
 	before_validation :thumb
 	belongs_to :video_categories
 

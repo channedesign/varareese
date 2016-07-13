@@ -1,4 +1,6 @@
 $(document).ready(function() {
+
+
 	$(".fullHeight_home").css("min-height", $(window).height());
 	$(".lightbox_thumb").hide();
 	if ($(window).width() <= 992) {

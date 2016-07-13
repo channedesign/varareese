@@ -7,10 +7,18 @@ Rails.application.routes.draw do
   get "admins/video"
   get "admins/profile"
 
-  resources :photos, except: [:show]
-  resources :video_categories, except: [:show]
-  resources :videos, except: [:show]
-  resources :photo_categories, except: [:index, :show]
+  resources :photos do
+    collection { post :sort }
+  end
+  resources :video_categories, except: [:show] do
+    collection { post :sort }
+  end
+  resources :videos, except: [:show] do
+    collection { post :sort }
+  end
+  resources :photo_categories, except: [:show] do 
+    collection { post :sort }
+  end
   devise_for :admins
   resources :contact_forms, only: [:new, :create]
   

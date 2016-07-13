@@ -1,26 +1,15 @@
 <div class="row">
-	<div class="col-sm-6 col-sm-offset-3">
-		<form novalidate role="form" ng-submit="updateVideo($index)">
-		  <div class="form-group">
-		    <label for="name">Title:</label>
-		    <input type="text" class="form-control" id="name" placeholder="Title" ng-model="video.name">
+	<div class="col-sm-8 col-sm-offset-2">
+		<h2><small>{{video.name}}</small></h2>
+		<img ng-src="{{video.thumb_link}}" class="edit-video-thumb">
+		<hr>
+		<br>
+		<form novalidate role="form" ng-submit="updateVideo()">
+		  <video-form value="video" videos-cat="videosCat"></video-form>
+		  <div class="col-sm-12 marginTopMinMin">
+		  	<button type="submit" class="btn btn-default">Submit</button>
+		  	<a href="" ng-click="videoEditCancel()" class="cancel_link">Cancel</a>
 		  </div>
-		  <div class="form-group">
-		    <label for="magazine">Magazine Name:</label>
-		    <input type="text" class="form-control" id="magazine" placeholder="Magazine Name" ng-model="video.mag">
-		  </div>
-		  <div class="form-group">
-		    <label for="magazine_link">Magazine Link:</label>
-		    <input type="url" class="form-control" id="magazine_link" placeholder="e.g. 'http://www.example.com'" ng-model="video.mag_link">
-		  </div>
-		  <div class="form-group">
-		    <label for="link">Video Link:</label>
-		    <input type="text" class="form-control" id="link" placeholder="e.g. '34969454'" ng-model="video.link">
-		  </div>
-		  <label ng-repeat="videoCat in videosCat" class="checkbox-inline"><input type="checkbox" value="" ng-model="videoCat.video.video_category_id">{{videoCat.name}}</label>
-		  <br>
-		  <button type="submit" class="btn btn-default">Submit</button>
-		  <a href="" ng-click="showForm=false">Cancel</a>
 		</form>
 	</div>
 </div>

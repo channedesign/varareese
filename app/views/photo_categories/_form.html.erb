@@ -1,24 +1,21 @@
-<%= link_to((fa_icon 'arrow-left') + "      Manage Photo", admins_photo_path , class: "btn btn-default") %>
-	<div class="row marginTop">
-		<div class="col-md-8 col-md-offset-2">
+<%= link_to((fa_icon 'arrow-left') + " Manage Photo", "/admins#/photos" , class: "btn btn-default") %>
+	<div class="row">
+		<div class="well col-md-8 col-md-offset-2 marginTopMin">
 			<%= simple_form_for(@photo_cat, html: {multipart: true}) do |f| %>
-			<%= f.input :name %>
-			<%= f.input :position, collection: 1..@photo_cats.length %>
-			<% if @photo_cat.image.present? %>
-				<div class="col-md-12">
-					<%= image_tag(@photo_cat.image, class: "video_category_image") %>
-				</div>
-				<div class="row">
-					<div class="col-md-8 marginTopMin">
+				<div>
+					<h3>Cropping</h3>
+          <p>Cropping will only apply to the thumbnails</p>
+          <br>
+					<div class="col-md-8">
 						<%= f.cropbox :image, width: 400 %>
 					</div>
-					<div class="col-md-4 marginTopMin">
-	  					<%= f.crop_preview :image, width: 200 %>
-	  				</div>
-	  			</div>
-			<% end %>
-			<%= f.file_field :image, accept: "image/jpeg, image/gif, image/png" %>
-			<%= f.submit(@photo_cat.new_record? ? "Add New Category" : "Finish Cropping", class: "btn btn-default" )  %>
+					<div class="col-md-4">
+  					<%= f.crop_preview :image, width: 200 %>
+  				</div>
+  			</div>
+  			<div class="col-md-12 marginTopMin">
+					<%= f.submit(@photo_cat.new_record? ? "Add New Category" : "Finish Cropping", class: "btn btn-default" )  %>
+				</div>
 			<% end %>
 		</div>
 	</div>

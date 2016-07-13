@@ -1,18 +1,24 @@
 class PhotoCategoriesController < ApplicationController
 	before_action :authenticate_admin!
-	before_action :photo_cats_order, only: [:new, :create, :edit]
-	before_action :photo_cats_id, only: [:edit, :update]
+	before_action :photo_cats_id, only: [:edit, :update, :destroy]
+	
+	respond_to :json
+
+	def index
+		@photo_cats = PhotoCategory.order_by_position
+		respond_with @photo_cats.to_json(methods: [:image_url]), status: 200
+	end
+
 	def new
-		@photo_cat = PhotoCategory.new
 	end
 
 	def create
 		@photo_cat = PhotoCategory.new(photo_category_params)
-		
+
 		if @photo_cat.save
-			redirect_to admins_photo_path, notice: "Photo category created successfully"
+			respond_with @photo_cat, status: 200
 		else
-			render :new, alert: "Photo category NOT created"
+			respond_with json: {errors: @photo_cat.errors.full_messages.join(',')}, status: 422
 		end
 	end
 
@@ -20,26 +26,33 @@ class PhotoCategoriesController < ApplicationController
 	end
 
 	def update
-
-		if @photo_cat.update_attributes(photo_category_params)
-			redirect_to new_photo_category_path, notice: "Category edited successfully"
-		else
-			render :edit, alert: "Category NOT updated"
-		end
+  	respond_to do |format|
+	  	if @photo_cat.update_attributes(photo_category_params)
+	  		format.html { redirect_to '/admins#/photos' }
+	  		format.json { 
+	  									respond_with @photo_cat.to_json(methods: [:image_url]), 
+	  									json: {message: "success", url: @photo_cat.image_url, id: @photo_cat.id, status: 200} 
+	  								}
+	  	else
+	  		format.json { respond_with errors: @photo_cat.errors.full_messages, status: 422 }
+	  	end
+	  end
 	end
 
 	def destroy
-		@photo_cat = PhotoCategory.find(params[:id]).destroy
-		redirect_to admins_photo_path, notice: "Photo category deleted successfully"
+		respond_with @photo_cat.destroy, status: 200
 	end
+
+	def sort
+    params[:photo_category].each_with_index do |id, index|
+      PhotoCategory.where(id: id).update_all({position: index + 1})
+    end
+    render nothing: true
+  end
 
 	private
 		def photo_category_params
-			params.require(:photo_category).permit(:name, :position, :image, :image_original_w, :image_original_h, :image_box_w, :image_crop_x, :image_crop_y, :image_crop_w, :image_crop_h, :image_aspect)
-		end
-
-		def photo_cats_order 
-			@photo_cats = PhotoCategory.order("position ASC")
+			params.require(:photo_category).permit(:name, :position, :image, :image_original_w, :image_original_h, :image_box_w, :image_crop_x, :image_crop_y, :image_crop_w, :image_crop_h, :image_aspect, :id)
 		end
 
 		def photo_cats_id

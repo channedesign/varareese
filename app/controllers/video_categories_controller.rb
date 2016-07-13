@@ -1,51 +1,51 @@
 class VideoCategoriesController < ApplicationController
 	before_action :authenticate_admin!
-	before_action :video_cats_order, except: [:destroy, :update]
-	before_action :video_cats_id, only: [:edit, :update]
+	before_action :video_cats_id, only: [:edit, :update, :destroy]
 
 	respond_to :json
 
 	def index
+		@video_cats = VideoCategory.order_by_position
+		respond_with @video_cats.to_json(methods: [:image_url]), status: 200
 	end
 
 	def new
-		@video_cat = VideoCategory.new
 	end
 
 	def create
 		@video_cat = VideoCategory.new(video_category_params)
 
 		if @video_cat.save
-			redirect_to admins_video_path, notice: "Category created successfully"
+			respond_with @video_cat, status: 200
 		else
-			render :new, alert: "Category NOT created"
+			respond_with errors: @video_cat.errors.full_messages, status: 422
 		end
+
 	end
 
 	def edit
+		respond_with @video_cat.to_json(methods: [:image_url])
 	end
 
 	def update
-		if @video_cat.update_attributes(video_category_params)
-			redirect_to new_video_category_path, notice: "Category edited successfully"
-		else
-			render :edit, alert: "Category NOT updated"
-		end
+		respond_with @video_cat.update(video_category_params).to_json(methods: [:image_url]), json: {message: "success", url: @video_cat.image_url, id: @video_cat.id, status: 200}
 	end
 
 	def destroy
-		@video_cat = VideoCategory.find(params[:id]).destroy
-		redirect_to admins_video_path, notice: "Category deleted successfully"
+		respond_with @video_cat.destroy, status: 200
+		
 	end
+
+	def sort
+    params[:video_category].each_with_index do |id, index|
+      VideoCategory.where(id: id).update_all({position: index + 1})
+    end
+    render nothing: true
+  end
 
 	private
 		def video_category_params
-			params.require(:video_category).permit(:name, :position, :image)
-		end
-
-		def video_cats_order
-			# @video_cats = VideoCategory.order("position ASC")
-			respond_with VideoCategory.order("position ASC")
+			params.require(:video_category).permit(:name, :position, :image, :id)
 		end
 
 		def video_cats_id
