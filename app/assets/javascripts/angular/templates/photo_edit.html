@@ -26,7 +26,7 @@
 			  <label class="col-sm-12" ng-repeat="photoCat in photosCat"><input type="checkbox" value="" ng-model="photo.photo_category_id" ng-true-value="'{{photoCat.id}}'" ng-checked="photoCat.id === photo.photo_category_id">&nbsp;&nbsp;&nbsp;{{photoCat.name}}</label>
 			</div>
 			<div class="col-sm-12 marginTopMinMin">
-		  	<button type="submit" class="btn btn-default">Submit</button>
+		  	<button type="submit" class="btn btn-default">Save</button>
 		  	<a href="" ng-click='photoEditCancel()'>Cancel</a>
 		  </div>
 		</form>

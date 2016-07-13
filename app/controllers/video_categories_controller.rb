@@ -5,11 +5,8 @@ class VideoCategoriesController < ApplicationController
 	respond_to :json
 
 	def index
-		@video_cats = VideoCategory.order_by_position
+		@video_cats = VideoCategory.order_by_position.includes(:videos)
 		respond_with @video_cats.to_json(methods: [:image_url]), status: 200
-	end
-
-	def new
 	end
 
 	def create

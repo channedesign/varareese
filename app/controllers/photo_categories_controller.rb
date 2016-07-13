@@ -5,11 +5,8 @@ class PhotoCategoriesController < ApplicationController
 	respond_to :json
 
 	def index
-		@photo_cats = PhotoCategory.order_by_position
+		@photo_cats = PhotoCategory.order_by_position.includes(:photos)
 		respond_with @photo_cats.to_json(methods: [:image_url]), status: 200
-	end
-
-	def new
 	end
 
 	def create

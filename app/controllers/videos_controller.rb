@@ -8,9 +8,6 @@ class VideosController < ApplicationController
     respond_with Video.order_by_position, status: 200
   end
 
-  def new
-  end
-
   def create
     @video = Video.new(video_params)
     if @video.save

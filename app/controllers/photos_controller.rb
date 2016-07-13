@@ -12,10 +12,6 @@ class PhotosController < ApplicationController
   def show
   end
 
-  def new
-    @photo = Photo.new
-  end
-
   def create
     @photo = Photo.new(photo_params)
 
@@ -32,8 +28,8 @@ class PhotosController < ApplicationController
   def update
     @photo = Photo.find(params[:id])
     respond_to do |format|
-      if @photo.update_attributes(photo_params)# respond_with @photo.update(photo_params).to_json(methods: [:image_url])
-        format.html { redirect_to '/admins#/photos' }
+      if @photo.update_attributes(photo_params)
+        format.html { redirect_to "/admins#/photos/#{@photo.id}/edit" }
         format.json { respond_with @photo, status: 200 }
       else
         format.json { respond_with errors: @photo.errors.full_messages, status: 422 }
@@ -43,7 +39,7 @@ class PhotosController < ApplicationController
 
   def destroy
     @photo = Photo.find(params[:id]).destroy
-    respond_with @photo
+    respond_with @photo, status: 200
   end
 
   def sort

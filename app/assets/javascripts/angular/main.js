@@ -13,8 +13,7 @@
 		'TruncateFilter',
 		'thatisuday.dropzone',
 		'ui.sortable',
-		'ngMessages',
-		'ngImgCrop'
+		'ngMessages'
 		]);
 
 	varaApp.config(['$routeProvider', '$httpProvider', function($routeProvider, $httpProvider) {
