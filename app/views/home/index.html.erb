@@ -18,6 +18,9 @@
 					<%= image_tag("VaraReeseBanner.png", class: "vara_logo_pic") %>
 				</div>
 			</div>
+			<div class="down-arrow-div">
+				<%= link_to((fa_icon "arrow-down 3x"), '#video') %>
+			</div>
 		</div>
 	</div>
 	<div class="photo_background fullHeight_home">
@@ -28,8 +31,8 @@
 		</div>
 	</div>
 </div>
-<%= render( template: "videos/index") %>
-<%= render( template: "photos/index") %>
+<%= render template: "videos/index" %>
+<%= render template: "photos/index" %>
 <%= render template: "contact_forms/new" %>
 
 

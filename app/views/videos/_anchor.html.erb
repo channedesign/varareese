@@ -4,6 +4,7 @@
 		<% var.each do |video| %>
 			<div>
 				<div class="video_size video_size_<%= title %>" id="<%= var.length %>_item">
+					<%= link_to((fa_icon 'play 2x'), "", data: {featherlight: "#feather_box_#{video.link}" }, class: "video_img_thumb_#{video.link} lazyload gallery") %>
 					<%= link_to(image_tag(video.thumb_link), "", data: {featherlight: "#feather_box_#{video.link}" }, class: "video_img_thumb_#{video.link} lazyload gallery") %>
 				</div>
 				<div class="titles_links">

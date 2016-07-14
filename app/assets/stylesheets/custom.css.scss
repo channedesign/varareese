@@ -537,6 +537,16 @@ a:hover {
 	width: 70%;
 }
 
+.down-arrow-div {
+	position: absolute;
+	bottom: 10%;
+	left: 50%;
+	background-color: rgba(200,200,200,0.5);
+	padding: 25px;
+	border-radius: 40%;
+	opacity: 0;
+}
+
 /*-----------------    Video    ------------------*/
 
 #video {
@@ -572,6 +582,28 @@ a:hover {
 	height: 215px;
 	margin-left: 20px;
 	padding-bottom: 30px;
+	i {
+		position: absolute;
+		z-index: 9999;
+		top: 28%;
+		left: 43%;
+		padding: 20px;
+		border-radius: 100%;
+		-moz-border-radius: 100%;
+		-webkit-border-radius: 100%;
+		border: 1px solid #000000;
+		display: none;
+	}
+}
+
+.video_size:hover {
+	i {
+		display: block;
+	}
+	i:hover {
+		color: black;
+		border-color: white;
+	}
 }
 
 .two_video_padding {
