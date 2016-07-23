@@ -10,6 +10,7 @@
 		'PhotosServices',
 		'VideosDirectives',
 		'PhotosDirectives',
+		'ConfirmationDirectives',
 		'TruncateFilter',
 		'thatisuday.dropzone',
 		'ui.sortable',

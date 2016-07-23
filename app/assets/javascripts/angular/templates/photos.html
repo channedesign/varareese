@@ -46,7 +46,7 @@
       <a href="" data-toggle="modal" data-target="#editPhotoCatModal{{photoCat.id}}" ng-click="editPhotoCat()"><i class="fa fa-pencil" aria-hidden="true"></i></a>
     </div>
     <div class="tab_delete">
-      <a href="" ng-click="deletePhotoCat(photoCat.id, $index)"><i class="fa fa-trash" aria-hidden="true"></i></a>
+      <a href="" confirm-delete-msg="Are you sure you want to delete {{photoCat.name}}?" confirm-delete="deletePhotoCat(photoCat.id, $index)"><i class="fa fa-trash" aria-hidden="true"></i></a>
     </div>
     
     <div id="editPhotoCatModal{{photoCat.id}}" class="modal fade black" role="dialog">

@@ -3,7 +3,7 @@
 	<div class="img_tab_edit" ng-click="toPhotoEdit(photo.id)">
 		<a href><i class="fa fa-pencil fa-3x image_tab_i" aria-hidden="true"></i></a>
 	</div>
-	<div class="img_tab_delete" ng-click="deletePhoto(photo.id, $index)">
+	<div class="img_tab_delete" confirm-delete-msg="Are you sure you want to delete {{photo.name}}?" confirm-delete="deletePhoto(photo.id, $index)">
 		<a href><i class="fa fa-trash fa-2x image_tab_i" aria-hidden="true"></i></a>
 	</div>
 </div>

@@ -4,7 +4,7 @@
 	<div class="img_tab_edit">
 		<a ng-href="#/videos/{{video.id}}/edit"><i class="fa fa-pencil fa-3x video_image_tab_i" aria-hidden="true"></i></a>
 	</div>
-	<div class="img_tab_delete" ng-click="deleteVideo($index)">
+	<div class="img_tab_delete" confirm-delete-msg="Are you sure you want to delete {{video.name}}?" confirm-delete="deleteVideo($index)">
 		<a href><i class="fa fa-trash fa-2x video_image_tab_i" aria-hidden="true"></i></a>
 	</div>
 </div>
