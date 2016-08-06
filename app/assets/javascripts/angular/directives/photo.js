@@ -10,7 +10,7 @@
 		.directive('checkUniqueness', ['PhotosCat', function(PhotosCat) {
 			return {
 				require: 'ngModel', 
-				link: function(scope, element, attrs, ngModel) {
+				link: ['scope', 'element', 'attrs', 'ngModel', function(scope, element, attrs, ngModel) {
 					var seedData = PhotosCat.query();
 					scope.notUniq = false;
 					valid(true);
@@ -35,7 +35,7 @@
         	scope.interacted = function(field) {
 		      	return scope.submitted || field.$dirty;
 		    	};
-				}
+				}]
 			}
 		}])
 })();

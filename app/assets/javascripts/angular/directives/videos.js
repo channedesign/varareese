@@ -6,11 +6,11 @@
 				restrict: 'E',
 				templateUrl: 'partials/video_form.html',
 				scope: {value: '=', videosCat: '=', form: '='},
-				link: function(scope) {
-					scope.interacted = ['field', function(field) {
+				link: ['scope', function(scope) {
+					scope.interacted = function(field) {
 			    	return scope.submitted || field.$dirty;
-			  	}];
-				}
+			  	};
+				}]
 			}
 		})
 		.directive('videoTabContent', function() {
