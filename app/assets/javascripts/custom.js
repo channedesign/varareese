@@ -8,7 +8,7 @@ $(document).ready(function() {
 	}
 
 	// Small animation for the down arrow
-	TweenLite.to($(".down-arrow-div"), 2, { opacity: 1, delay: 2, bottom: "3%", ease:Elastic.easeOut });
+	TweenLite.to($(".down-arrow-div"), 2, { opacity: 1, delay: 3, bottom: "3%", ease:Elastic.easeOut });
 
 	//Detect if touch device
 	function isTouchSupported() {
