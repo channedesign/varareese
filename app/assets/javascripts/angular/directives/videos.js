@@ -22,7 +22,7 @@
 		.directive('checkUniqueness', ['VideosCat', 'Videos', function(VideosCat, Videos) {
 			return {
 				require: 'ngModel', 
-				link: function(scope, element, attrs, ngModel) {
+				link: ['scope', 'element', 'attrs', 'ngModel', function(scope, element, attrs, ngModel) {
 					var seedData = VideosCat.query();
 					var seedDataVideo = Videos.query();
 					scope.notUniq = false;
@@ -64,7 +64,7 @@
         	scope.interacted = function(field) {
 		      	return scope.submitted || field.$dirty;
 		    	};
-				}
+				}]
 			}
 		}])
 })();
