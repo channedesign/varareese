@@ -7,9 +7,9 @@
 				templateUrl: 'partials/video_form.html',
 				scope: {value: '=', videosCat: '=', form: '='},
 				link: function(scope) {
-					scope.interacted = function(field) {
+					scope.interacted = ['field', function(field) {
 			    	return scope.submitted || field.$dirty;
-			  	};
+			  	}];
 				}
 			}
 		})
