@@ -10,7 +10,7 @@ class ContactForm < MailForm::Base
    	{
     	:subject => "Message From Your Website - varareese.com",
      	:to => "channebertrand@gmail.com",
-     	:from => "varareese@gmail.com"
+     	:from => "channebertrand@gmail.com"
     }
   end
 end
