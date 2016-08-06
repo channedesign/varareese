@@ -1,5 +1,0 @@
-<% var.each do |photo| %>
-	<div class="col-xs-3 mini_thumb_div">
-		<%= link_to(image_tag(photo.photo.url(:thumb), class: "mini_thumb"), edit_photo_path(photo)) %>
-	</div>
-<% end %>

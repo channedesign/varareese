@@ -1,0 +1,145 @@
+<div class="row">
+  <div class="col-sm-6 col-sm-offset-3 add_div" ng-click="showForm=true" ng-hide="showForm">
+    <i class="fa fa-plus fa-5x" aria-hidden="true"></i>
+    <h3>Upload a New Photo</h3>
+  </div>
+  <div class="col-sm-10 col-sm-offset-1 border text-center" ng-show="showForm">
+    <span class="close_photo_form" ng-click="cancelForm()">X</span>
+    <h3>Adding new photos</h3>
+      <div class="col-sm-6 marginTopBottom20" ng-hide="showPhotoDZ">
+        <button class="btn btn-default big_button" ng-click="showCategories=true" ng-hide="showCategories">Existing Categories</button>
+        <div class="text-left col-sm-6 col-sm-offset-3" ng-show="showCategories">
+          <p>Choose one exisiting category: </p>
+          <br>
+          <div class="checkbox" ng-repeat="photoCat in photosCat">
+            <label><input type="checkbox" value="" ng-click="selectPhotoCatId(photoCat, $index, photosCat)" ng-checked="photoCat.checked">&nbsp;&nbsp;&nbsp;{{photoCat.name}}</label>
+          </div>
+        </div>
+          
+      </div>
+      <div class="col-sm-6 marginTopBottom20" ng-hide="showPhotoDZ">
+        <button class="btn btn-default big_button" data-toggle="modal" data-target="#photoCatModal" ng-click="createPhotoCatModal()">Create a New Category</button>
+      </div>
+      <div class="col-sm-12 marginTopBottom20" ng-hide="showPhotoDZ">
+        <button type="submit" ng-click="showPhotoDZ=true" ng-show="showLaterButton" class="btn btn-default">Add Category Later</button>
+        <button type="submit" ng-click="showPhotoDZ=true" ng-hide="showLaterButton" class="btn btn-default">Next</button>
+        <br>
+        <br>
+        <a href="" ng-click="cancelForm()" class="cancel_link">Cancel</a>
+      </div>
+    
+  	<div class="col-sm-6 col-sm-offset-3 marginTopBottom20" ng-show="showPhotoDZ">
+      <a href="" ng-click="backToForm()"><i class="fa fa-arrow-left" aria-hidden="true"></i>Back</a>
+  		<ng-dropzone class="dropzone" options="dzOptions" callbacks="dzCallbacks" methods="dzMethods"></ng-dropzone>
+  	</div>
+  </div>
+</div>
+
+
+<ul class="nav nav-tabs marginTopMin" ui-sortable="sortingTabs" ng-model="photosCat">
+  <li class="active"><a data-toggle="tab" href="" ng-click="selectTab(1)">All</a></li>
+  
+  <li ng-repeat="photoCat in photosCat" class="tab_selection" id="photo_category_{{photoCat.id}}">
+    <a data-toggle="tab" href="" ng-click="selectTab(photoCat.name)">{{photoCat.name}}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+    
+    <div class="tab_edit">
+      <a href="" data-toggle="modal" data-target="#editPhotoCatModal{{photoCat.id}}" ng-click="editPhotoCat()"><i class="fa fa-pencil" aria-hidden="true"></i></a>
+    </div>
+    <div class="tab_delete">
+      <a href="" confirm-delete-msg="Are you sure you want to delete {{photoCat.name}}?" confirm-delete="deletePhotoCat(photoCat.id, $index)"><i class="fa fa-trash" aria-hidden="true"></i></a>
+    </div>
+    
+    <div id="editPhotoCatModal{{photoCat.id}}" class="modal fade black" role="dialog">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+            <h4 class="modal-title">Edit the <strong>{{photoCat.name}}</strong> Tab/Section</h4>
+          </div>
+          <div class="modal-body">
+            <div class="col-sm-4 col-sm-offset-4">
+              <form role="form" class="form-inline" name="editPhotoCatForm">
+                <div class="form-group">
+                  <label for="name">Name: </label>
+                  <input name="name" type="text" class="form-control" ng-model="photoCat.name" ng-keyup="updatePhotoCatName(photoCat.id, photoCat.name)" check-uniqueness="photosCat" required>
+                </div>
+                <div ng-messages="editPhotoCatForm.name.$error" role="alert" class="error-messages text-left" ng-if="interacted(editPhotoCatForm.name)">
+                  <div ng-message="required">Title is required!</div>
+                  <div ng-message="record-taken">Title already taken!</div> 
+                </div>
+              </form>
+            </div>
+            <div class="row">
+              <div class="col-sm-8 col-sm-offset-2 marginTopMin editPhotoPhotoCat photo_layer_anchor" ng-show="showPhotoCatImg" ng-click="updatePhotoCatImg(photoCat.id)">
+                <img class="editPhotoCatImg" ng-if="photoCat.image_url===undefined" src="../images/thumb/missing.png">
+                <img class="editPhotoCatImg" ng-if="photoCat.image_url!==undefined" ng-src="{{photoCat.image_url}}">
+                <div class="photo_layer text-center">
+                  <p class="lead">Click Here to Edit</p>
+                </div>
+              </div>
+              <div class="col-sm-12 marginTopMin"><a href="/photo_categories/{{photoCat.id}}/edit" class="black">Need cropping?</a></div>
+              <div class="col-sm-8 col-sm-offset-2 marginTopMin" ng-hide="showPhotoCatImg">
+                <ng-dropzone class="dropzone" options="dzOptionsPhotoCat" callbacks="dzCallbacksPhotoCat" methods="dzMethodsPhotoCatEdit"></ng-dropzone>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div><!--End of Modal-->
+  </li>
+  
+  <li><a href="" data-toggle="modal" data-target="#photoCatModal" ng-click="showPhotoCatForm=true"><i class="fa fa-plus" aria-hidden="true"></i></a></li>
+</ul>
+
+
+<div class="tab-content">
+  <div class="tab-pane fade in active" ng-show="tab===1">
+    <div ui-sortable="sorting" ng-model="photos">
+      <div class="col-sm-3 mini_thumb_div" ng-repeat="photo in photos" id="photo_{{photo.id}}">
+      	<photo-tab-content></photo-tab-content>
+  		</div>
+    </div>
+  </div>
+  <div class="tab-pane fade in active" ng-repeat="photoCat in photosCat" ng-show="tab===photoCat.name" id="photo_category_{{photoCat.id}}">
+    <div ui-sortable="sorting" ng-model="photos">
+    	<div class="col-sm-3 mini_thumb_div" ng-repeat="photo in photos" ng-show="photo.photo_category_id===photoCat.id" id="photo_{{photo.id}}">
+        <photo-tab-content></photo-tab-content>
+     	</div>
+    </div>
+  </div>
+</div>
+
+
+
+<div id="photoCatModal" class="modal fade black" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Create a New Tab/Section</h4>
+      </div>
+      <div class="modal-body">
+        <form novalidate name="photoCatForm" role="form" ng-submit="addNewPhotoCatName()" ng-show="showPhotoCatForm">
+          <div class="form-group">
+            <label for="name">Title:</label>
+            <input name="name" type="text" class="form-control" ng-model="newPhotoCat.name" placeholder="What is the title of the new tab/section?" check-uniqueness="photosCat" required>
+          </div>
+          <div ng-messages="photoCatForm.name.$error" role="alert" class="error-messages text-left" ng-if="interacted(photoCatForm.name)">
+            <div ng-message="required">Title is required</div>
+            <div ng-message="record-taken">Title already taken!</div> 
+          </div>
+          <button type="submit" class="btn btn-default" ng-disabled="photoCatForm.$invalid || notUniq">Next</button>
+        </form>
+        <div ng-hide="showPhotoCatForm">
+          <p class="lead">Let's upload a picture for the <strong>{{newPhotoCat.name}}</strong> section!</p>
+          <ng-dropzone class="dropzone" options="dzOptionsPhotoCat" callbacks="dzCallbacksPhotoCat" methods="dzMethodsPhotoCat"></ng-dropzone>
+          <br>
+          <p>Psssst!...You can always do this later...</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div><!--End of Modal-->
+
+
+

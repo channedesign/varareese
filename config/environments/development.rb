@@ -23,17 +23,16 @@ config.paperclip_defaults = {
   config.action_controller.perform_caching = false
   # Don't care if the mailer can't send.
   config.action_mailer.raise_delivery_errors = false
-  config.action_mailer.default_url_options = { :host => 'localhost:5100' }
+  config.action_mailer.default_url_options = { :host => 'localhost:3000' }
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.perform_deliveries = true
   config.action_mailer.smtp_settings = {
-  address: "smtp.gmail.com",
+  address: "mail-smtp.us-west-2.amazonaws.com",
   port: 587,
-  domain: ENV["GMAIL_DOMAIN"],
   authentication: "plain",
   enable_starttls_auto: true,
-  user_name: ENV["GMAIL_USERNAME"],
-  password: ENV["GMAIL_PASSWORD"]
+  user_name: ENV["AWS_SES_USERNAME"],
+  password: ENV["AWS_SES_PASSWORD"]
   }
 
 

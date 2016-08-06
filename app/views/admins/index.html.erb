@@ -1,21 +1,20 @@
-<%= render template: "shared/admins_header" %>
-<div class="container center">
-	<div class="row">
-		<div class="col-md-6 col-md-offset-3">
-			<h1>Welcome Vara</h1>
-			<h3>Content Management System</h3>
-		</div>
-		<div class="col-md-6 col-md-offset-3 marginTopMin">
-			<h2>Profile</h2>
-			<%= link_to((fa_icon "female 5x", class: "manage_icon"), edit_admin_registration_path) %>
-		</div>
-		<div class="col-md-6">
-			<h2>Manage Videos</h2>
-			<%= link_to((fa_icon "video-camera 5x", class: "manage_icon"), admins_video_path) %>
-		</div>
-		<div class="col-md-6">
-			<h2>Manage Photos</h2>
-			<%= link_to((fa_icon "camera-retro 5x", class: "manage_icon"), admins_photo_path) %>
-		</div>
+<div class="container center" ng-app="VaraApp">
+	
+	<div class="centered-pills" ng-controller='adminNavCtrl'>
+		<ul class="nav nav-pills">
+		  <li role="presentation"><a href="http://www.varareese.com">Website</a></li>
+		  <li role="presentation" class="dropdown">
+		  	<a href="" class="dropdown-toggle" data-toggle="dropdown">Admin</a>
+		    <ul class="dropdown-menu">
+		    	<li><a href="" ng-click="toIndex()"><i class="fa fa-home" aria-hidden="true"></i>&nbsp;Admin Home</a></li>
+		      <li><a href="/admins/edit"><i class="fa fa-female" aria-hidden="true"></i>&nbsp;Profile</a></li>
+		      <li><a href="#videos"><i class="fa fa-video-camera" aria-hidden="true"></i>&nbsp;Videos</a></li>
+		      <li><a href="#photos"><i class="fa fa-camera-retro" aria-hidden="true"></i>&nbsp;Photos</a></li> 
+		    </ul>
+		  </li>
+		  <li role="presentation"><a href="" ng-click="logOut()">LogOut</a></li>
+		</ul>
 	</div>
+	<div class="marginTopMin"></div>
+	<div ng-view></div>
 </div>

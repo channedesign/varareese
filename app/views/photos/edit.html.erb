@@ -1,24 +1,9 @@
 <%= render template: "shared/admins_header" %>
 <div class="container center">
-    <%= link_to((fa_icon 'arrow-left') + "      Manage Photo", admins_photo_path , class: "btn btn-default") %>
+    <%= link_to((fa_icon 'arrow-left') + " Manage Photo", "/admins#/photos" , class: "btn btn-default") %>
     <div class="row">
         <div class="well col-md-8 col-md-offset-2 marginTopMin">
             <%= simple_form_for(@photo, html: {multipart: true}) do |f| %>
-            <%= f.input :name, placeholder: "Name" %>
-            <% if @photo.name == "Reel" %>
-                <%= f.input :intro_text, as: :text, error: "The Reel needs an intro text" %>
-            <% end %>
-            <div class="photo">
-                <div><%= f.label :photo %></div>
-                <% if @photo.photo.present? %>
-                    <%= image_tag(@photo.photo.url(:thumb), class: "form_photo") %>
-                <% end %>
-                <br />
-                <div><%= f.file_field :photo, accept: "image/jpeg, image/gif, image/png", class: "custom-file-input" %></div>
-            </div>
-            <%= f.label :photo_categories, label: "Photo Categories" %>
-            <%= f.association :photo_categories, label: false, as: :check_boxes, label_method: :name, item_wrapper_class: "inline" %>
-            <%= f.input :position, collection: 1..@photos.length %>
             <div>
                 <h3>Cropping</h3>
                 <p>Cropping will only apply to the thumbnails</p>
@@ -31,18 +16,8 @@
                 </div>
             </div>
             <div class="col-md-12 marginTopMin">
-                <%= f.submit(@photo.new_record? ? "Add Photo" : "Edit Photo", class: "btn btn-success") %>
+                <%= f.submit(@photo.new_record? ? "Add Photo" : "Finish Cropping", class: "btn btn-default") %>
             </div>
-            <% end %>
-        </div>
-    </div>
-
-
-    <div class="row">
-        <div class="col-md-12">
-            <%= simple_form_for(@photo, :url => {:controller => "photos", :action => 'destroy', :id => @photo.id}, method: "delete") do |f| %>
-            
-            <%= submit_tag("Delete", class: "btn btn-danger") %>
             <% end %>
         </div>
     </div>

@@ -1,11 +1,14 @@
 $(document).ready(function() {
+
+
 	$(".fullHeight_home").css("min-height", $(window).height());
 	$(".lightbox_thumb").hide();
 	if ($(window).width() <= 992) {
 		$(".to_home").attr("href", "#home")
 	}
 
-	
+	// Small animation for the down arrow
+	TweenLite.to($(".down-arrow-div"), 2, { opacity: 1, delay: 3, bottom: "3%", ease:Elastic.easeOut });
 
 	//Detect if touch device
 	function isTouchSupported() {

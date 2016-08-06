@@ -1,0 +1,31 @@
+<div class="col-sm-8">
+  <div class="form-group">
+    <label for="name">Title:</label>
+    <input type="text" class="form-control" id="name" placeholder="Title" ng-model="value.name">
+  </div>
+  <div class="form-group" ng-if="value.name === 'Reel'">
+    <label for="name">Intro Text:</label>
+    <textarea class="form-control" placeholder="Optional" ng-model="value.intro_text" rows="8"></textarea>
+  </div>
+  <div class="form-group">
+    <label for="magazine">Magazine Name:</label>
+    <input type="text" class="form-control" id="magazine" placeholder="Magazine Name" ng-model="value.mag">
+  </div>
+  <div class="form-group">
+    <label for="magazine_link">Magazine Link:</label>
+    <input type="text" class="form-control" id="magazine_link" placeholder="e.g. 'http://www.example.com'" ng-model="value.mag_link">
+  </div>
+  <div class="form-group">
+    <label for="link">Video Link:</label>
+    <input name="link" type="text" class="form-control" placeholder="e.g. '34969454'" ng-model="value.link" check-uniqueness="videos" required>
+  </div>
+  <div ng-messages="form.link.$error" role="alert" class="error-messages text-left" ng-if="interacted(form.link)">
+    <div ng-message="required">Link is required</div>
+    <div ng-message="record-taken">Link already taken!</div>
+  </div>
+</div>
+<div class="col-sm-4 text-left">
+	<label class="col-sm-12 no-padding">Videos Categories: </label>
+	<br>
+  <label ng-repeat="videoCat in videosCat" class="col-sm-12 no-padding"><input type="checkbox" value="" ng-model="value.video_category_id" ng-true-value="'{{videoCat.id}}'" ng-click="updateSelection($index, videosCat)" ng-checked="videoCat.id === value.video_category_id">&nbsp;&nbsp;&nbsp;{{videoCat.name}}</label>
+</div>

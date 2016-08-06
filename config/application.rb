@@ -8,6 +8,9 @@ Bundler.require(*Rails.groups)
 
 module Vara
   class Application < Rails::Application
+    # Use the responders controller from the responders gem
+    config.app_generators.scaffold_controller :responders_controller
+
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.
@@ -22,5 +25,14 @@ module Vara
 
     # Do not swallow errors in after_commit/after_rollback callbacks.
     config.active_record.raise_in_transactional_callbacks = true
+
+    # Changing default path for angular-templates
+    config.angular_templates.module_name    = 'templates'
+    config.angular_templates.ignore_prefix  = %w(angular/templates/)
+    config.angular_templates.inside_paths   = ['app/assets']
+    config.angular_templates.markups        = %w(erb)
+    config.angular_templates.extension      = 'html'
+
+
   end
 end

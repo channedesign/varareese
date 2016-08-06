@@ -11,11 +11,16 @@
 // about supported directives.
 //
 //= require jquery
+//= require jquery-ui
+//= require jquery.jcrop
+//= require papercrop
 //= require hermitage
 //= require jquery.turbolinks
 //= require jquery_ujs
 //= require bootstrap-sprockets
-//= require jquery.jcrop
-//= require papercrop
-//= require turbolinks
+//= require angular
+//= require angular-route
+//= require angular-resource
+//= require angular-messages
+//= require angular-rails-templates
 //= require_tree .

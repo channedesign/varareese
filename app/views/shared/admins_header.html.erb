@@ -1,7 +1,14 @@
 <div class="centered-pills">
 	<ul class="nav nav-pills">
 	  <li role="presentation"><%= link_to("Website", root_path) %></li>
-	  <li role="presentation"><%= link_to("Admin", admins_path) %></li>
+	  <li role="presentation" class="dropdown"><%= link_to("Admin", "", data: { toggle: "dropdown" }, class: 'dropdown-toggle') %>
+		  <ul class="dropdown-menu">
+		  	<li><%= link_to((fa_icon 'home', text: "Admin Home"), "/admins#/") %></li>
+		  	<li><%= link_to((fa_icon 'female', text: "Profile"), "/admins/edit") %></li>
+		  	<li><%= link_to((fa_icon 'video-camera', text: "Videos"), "/admins#/videos") %></li>
+		  	<li><%= link_to((fa_icon 'camera-retro', text: "Photos"), "/admins#/photos") %></li>
+		  </ul>
+		 </li>
 	  <li role="presentation"><%= link_to("LogOut", destroy_admin_session_path, method: :delete) %></li>
 	</ul>
 </div>
